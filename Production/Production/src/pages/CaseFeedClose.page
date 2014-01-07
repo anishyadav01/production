@@ -1,0 +1,54 @@
+<apex:page standardcontroller="Case" extensions="CaseFeedCloseController" showHeader="false">
+
+
+  <apex:includeScript value="/canvas/sdk/js/28.0/publisher.js"/>
+  <apex:includeScript value="/support/api/26.0/interaction.js"/>
+  <style>
+      .requiredInput .requiredBlock, .requiredBlock {
+          background-color: white;
+      }
+      .custompubblock div {
+          display: inline-block;
+      }
+      .custompublabel {
+          width:100px;
+      }
+  </style>
+  
+  <!--<script> function refreshFeed() {
+    Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload : {feed: true}}); }
+  </script> -->
+  
+  <apex:includeScript value="/canvas/sdk/js/28.0/publisher.js" />
+  
+    <div>
+      <apex:form >
+      
+      <script> function refreshFeed() {
+    Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload : {feed: true}}); }
+  </script>
+      
+      <!-- Creates a case comment and on complete notifies the Case Feed page that a
+      related list and the feed have been updated -->
+      <!-- Different oncomplete function using publisher.js -->
+      <apex:actionFunction action="{!closeCase}" name="closeCase" rerender="out"  oncomplete="refreshFeed();" />
+      
+      <!--  "Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload:{feed: true, objectRelatedLists: {}}});" -->
+            
+        <apex:outputPanel id="out" >
+          <apex:outputLabel for="subjectField">Subject: </apex:outputLabel>
+          <apex:inputField id="subjectField" value="{!case.Subject}"/>
+          
+          <apex:outputLabel for="reasonField">Reason: </apex:outputLabel>
+          <apex:inputField id="reasonField" value="{!case.Reason}"/>
+          
+          <apex:outputLabel for="descrField">Description: </apex:outputLabel>
+          <apex:inputField id="descrField" value="{!case.description}" style="width:98%;height:160px;" />
+        </apex:outputPanel>
+        
+        <apex:commandButton onclick="closeCase" value="Close Case"/>
+        <!-- <button type="button" onclick="update" style="position:fixed; bottom:0px;right:2px; padding: 5px 10px; font-size:13px;" id="cpbutton" >TEST Submit</button>
+         -->
+      </apex:form>
+    </div>
+</apex:page>

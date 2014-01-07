@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Advisor_Communication_Skills_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advisor Communication Skills Question</shortDescription>
+        <value>How satisfied were you that the advisor you communicated with clearly understood your needs</value>
+    </labels>
+    <labels>
+        <fullName>Advisor_Communication_Skills_Sub_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advisor Communication Skills Sub Question</shortDescription>
+        <value>Sorry to hear that, could you please tell us the reasons for your score</value>
+    </labels>
+    <labels>
+        <fullName>Advisor_Knowledge_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Advisor_Knowledge_Question</shortDescription>
+        <value>How satisfied were you with the knowledge of the advisor who handled your call/contact</value>
+    </labels>
+    <labels>
+        <fullName>Issue_Resolution_Online_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Issue Resolution Online Question</shortDescription>
+        <value>Did you attempt to resolve your question Online</value>
+    </labels>
+    <labels>
+        <fullName>Missed_Chat</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Missed Chat</shortDescription>
+        <value>We are very sorry there are no agents available currently to take your chat.</value>
+    </labels>
+    <labels>
+        <fullName>Missed_Chat_2</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Missed Chat 2</shortDescription>
+        <value>Please close this window and either select an alternative contact method or try again later.</value>
+    </labels>
+    <labels>
+        <fullName>Post_Chat_Comments</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post Chat Comments</shortDescription>
+        <value>We would like to hear why you chose those ratings, please provide us with your comments below</value>
+    </labels>
+    <labels>
+        <fullName>Post_Chat_Survey_Scoring</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Post Chat Survey Scoring</shortDescription>
+        <value>Please rate the following questions on a scale of 1 to 5, 1 being Extremely Dissatisfied and 5 being Extremely Satisfied</value>
+    </labels>
+    <labels>
+        <fullName>Proactive_Handling_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Proactive_Handling_Question</shortDescription>
+        <value>Did you feel we proactively handled your contact</value>
+    </labels>
+    <labels>
+        <fullName>Query_Resolved_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Query Resolved Question</shortDescription>
+        <value>Was your query resolved on this occasion</value>
+    </labels>
+    <labels>
+        <fullName>Recommendation_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Recommendation Question</shortDescription>
+        <value>Based on this experience, how likely would you be to recommend TalkTalk to friends or colleagues on a scale from 1 (definitely would not) to 10(definitely would)</value>
+    </labels>
+    <labels>
+        <fullName>Service_Satisfaction_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Service Satisfaction Question</shortDescription>
+        <value>How satisfied were you with the service from our advisor</value>
+    </labels>
+    <labels>
+        <fullName>Survey_Consent_Question</fullName>
+        <categories>Post Chat Survey</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Survey Consent Question</shortDescription>
+        <value>Please do you have a few moments to tell us what you thought of the service you received during your chat session with TalkTalk?</value>
+    </labels>
+</CustomLabels>

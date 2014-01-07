@@ -1,0 +1,1975 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>ChangeStatus</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloneAsChild</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CloseCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>MassClose</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>NewCase</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>R6Service__SocialMedia</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Responded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Resolved</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <fields>
+        <fullName>AccountId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Agent_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Agent Comments</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Agent_Login__c</fullName>
+        <externalId>false</externalId>
+        <label>Agent Login</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Agent_Reason__c</fullName>
+        <externalId>false</externalId>
+        <label>Agent Reason</label>
+        <length>32000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Alternative_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Alternative Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AssetId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Author_Login__c</fullName>
+        <externalId>false</externalId>
+        <label>Author Login</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Author_Rank__c</fullName>
+        <externalId>false</externalId>
+        <label>Author Rank</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Account</label>
+        <referenceTo>Billing_Account__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Board_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Board ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>BusinessHoursId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CLI__c</fullName>
+        <externalId>false</externalId>
+        <label>CLI</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Callback_Date_Time__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and Time of booked callback</inlineHelpText>
+        <label>Callback Date/Time</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Case_Outcome__c</fullName>
+        <description>Possible outcomes of raising this case</description>
+        <externalId>false</externalId>
+        <inlineHelpText>What is the outcome of raising this case?</inlineHelpText>
+        <label>Case Outcome</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Billing Enquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Boost – Add boost – Provide details of boost</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call pricing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call pricing – International</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Channels</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor comparison – provide competitor detail</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract - cancellation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract – End date enquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract – length of contract</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract – Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer looking for a better offer – provide details</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer wants to cancel account – provide details</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Email address query</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fibre enquiry – package, price information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home mover</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installation – Powerline Adaptors</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installation query – Price, process, timescales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other – please insert question asked?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Package details – what is included in the package ?</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Router questions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Speed requirements</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical enquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV – Aerial/Availability/Multi room question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV – Self install</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV – Upgrade to TV</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV – YouView box details</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unable to get TV or Broadband – Select reason below</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLR – Adding VLR</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLR – Payment issue</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLR – Pricing</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Website issue – Issues signing up online – provide details</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Case_Sub_Origin__c</fullName>
+        <externalId>false</externalId>
+        <label>Case Sub Origin</label>
+        <picklist>
+            <controllingField>Origin</controllingField>
+            <picklistValues>
+                <fullName>Twitter @mention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter General</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forum</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter @aolcareuk Mentions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Twitter AOL Mentions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ChatKey__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>false</externalId>
+        <label>ChatKey</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>Chordiant_Account_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Chordiant Account Number</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Close_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Close Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Close_Reason__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Reason for closing the case</inlineHelpText>
+        <label>Close Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalation form completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer to call Contact Centre</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Gone Away</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Incorrect Transfer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No Response Needed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Responded to Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Call-back Booked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Community_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Community ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Community_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Community URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Complaint_Reference__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Trio Complaint Reference.</inlineHelpText>
+        <label>Complaint Reference</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ContactId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Customer_Number__c</fullName>
+        <description>Account Customer Number.</description>
+        <externalId>false</externalId>
+        <formula>Account.Customer_Number__c</formula>
+        <label>Customer Number</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DPA_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>DPA Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>DPA Not Checked</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DPA Passed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DPA Failed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>First_Response_Time__c</fullName>
+        <externalId>false</externalId>
+        <formula>(( First_Response__c -  CreatedDate)*1440)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>First Response Time</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>First_Response__c</fullName>
+        <externalId>false</externalId>
+        <label>First Response</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Jigsaw_Reference__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Reference to the TalkTalk Jigsaw system</inlineHelpText>
+        <label>Jigsaw Reference</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Key__c</fullName>
+        <description>An external Id used in code</description>
+        <externalId>true</externalId>
+        <label>Key</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Li_Community_User__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Community User</label>
+        <referenceTo>Li_Community_User__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Live_Chat_Current_Site__c</fullName>
+        <externalId>false</externalId>
+        <label>Live Chat Current Site</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Message_Posted__c</fullName>
+        <externalId>false</externalId>
+        <label>Message Posted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Live Chat</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TalkTalk Community</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Social Hub</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Owned_by_Queue__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Owner:User.Id),True,False)</formula>
+        <label>Owned by Queue?</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Phone_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Phone Number</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Previous_OwnerId__c</fullName>
+        <description>The Previous OwnerId before the Case is Reassigned via GetNext, usually a QueueId</description>
+        <externalId>false</externalId>
+        <label>Previous OwnerId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Priority</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__InitialPostId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the ID of the post that spawned this case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The social media post that raised this issue.</inlineHelpText>
+        <label>Initial Post</label>
+        <referenceTo>SocialPost</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__MediaIconResource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A formula used by the media icon. Should not be made visible.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(UPPER(R6Service__MediaProvider__c), &apos;TWITTER&apos;), &apos;/resource/R6Service__Twitter_Logo&apos;, 
+IF(CONTAINS(UPPER(R6Service__MediaProvider__c), &apos;FACEBOOK&apos;), &apos;/resource/R6Service__Facebook_Logo&apos;, 
+IF(CONTAINS(UPPER(R6Service__MediaProvider__c), &apos;YOUTUBE&apos;), &apos;/resource/R6Service__MediaTypeYouTubeIcon&apos;, 
+CASE(UPPER(R6Service__MediaType__c), 
+&apos;BLOGS&apos;, &apos;/resource/R6Service__MediaTypeBlogIcon&apos;, 
+&apos;VIDEOS&apos;, &apos;/resource/R6Service__MediaTypeVideoIcon&apos;, 
+&apos;IMAGES&apos;, &apos;/resource/R6Service__MediaTypeImageIcon&apos;, 
+&apos;MAINSTREAM NEWS&apos;, &apos;/resource/R6Service__MediaTypeNewsIcon&apos;, 
+&apos;MICROMEDIA&apos;, &apos;/resource/R6Service__MediaTypeMicromediaIcon&apos;, 
+&apos;FORUM&apos;, &apos;/resource/R6Service__MediaTypeForumIcon&apos;, 
+&apos;COMMENTS&apos;, &apos;/resource/R6Service__MediaTypeCommentIcon&apos;, 
+&apos;/resource/R6Service__DefaultChannelLogo&apos; 
+))))</formula>
+        <label>Media Icon Resource</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__MediaIcon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The icon that represents the medium that initiated the case. This will be the provider&apos;s logo for common providers, or generic media type logos for less popular providers.</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(R6Service__MediaIconResource__c, R6Service__MediaType__c +&quot;/&quot; + R6Service__MediaProvider__c, 48, 48)</formula>
+        <inlineHelpText>The media provider or media type of the post that initiated the case.</inlineHelpText>
+        <label>Media Icon</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__MediaProvider__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The media provider of the post that initiated this case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The social network of the post that initiated this case. For example: Facebook, Twitter, Youtube or Myspace.</inlineHelpText>
+        <label>Media Provider</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__MediaType__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The media type for the post that initiated this case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The media type of the media provider. For example: Youtube is a &quot;video&quot; media type while Twitter is &quot;micromedia&quot;.</inlineHelpText>
+        <label>Media Type</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__PersonaAvatar__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Profile picture of the persona for whom the case was created, if the picture can be found.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(R6Service__SocialPersona__c), R6Service__InitialPostId__r.Persona.R6Service__Avatar__c, R6Service__SocialPersona__r.R6Service__Avatar__c)</formula>
+        <inlineHelpText>User&apos;s profile picture, if it can be found.</inlineHelpText>
+        <label>Avatar</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__RecipientSMMA__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recipient Social Media Account</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__SM_Persona__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>DO NOT USE. This field relates to an object that is no longer supported.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DO NOT USE. This field relates to an object that is no longer supported.</inlineHelpText>
+        <label>(DO NOT USE) Persona</label>
+        <referenceTo>R6Service__Persona__c</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__SocialPersona__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Lookup to the SocialPerson that made the post that generated the case.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Social Persona that generated the case.</inlineHelpText>
+        <label>Social Persona</label>
+        <referenceTo>SocialPersona</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Reason</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Sales enquiry</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Technical fault</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complaint</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Advised to call Homemovers</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BB - Speed Enquiry</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation - Disconection</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Competitor -Price</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract - Commitment</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract – End Date Enquiry</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CS Query- Advised To Contact Tech</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Equipment - Youview Box</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installation - Fee Enquiry</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installation - Powerline Adaptors</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Installation - Self Install</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MyAccount - Boost Added</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MyAccount - Order Queries</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other - Calls - Call Charges</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other - Enquiry</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Package - Info</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Package - Info only</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Router Specification - Enquiry</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Save</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Save - Added Boost</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Save - VLR Renewal</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV - Not Available</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>TV/BB - Not Available</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLR - Info Given</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>VLR - Renewal</fullName>
+                <cssExposed>false</cssExposed>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Record_Type_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>$RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Record Type Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <closed>false</closed>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Hold</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Assigned</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Responded</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Customer</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Escalated</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resolved</fullName>
+                <closed>false</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <closed>true</closed>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TalkTalk_Customer__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>TalkTalk Customer?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Thread_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Thread ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <listViews>
+        <fullName>AllOpenCases</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Live_Agent_Open_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>CASES.PRIORITY</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CORE.USERS.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.ORIGIN</field>
+            <operation>equals</operation>
+            <value>Live Chat</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Resolved</value>
+        </filters>
+        <label>Live Agent Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyCases</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpenCases</fullName>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CASES.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>My Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Social_Media_Facebook_Case_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Resolved,Closed</value>
+        </filters>
+        <label>Social Media Facebook Case Queue</label>
+        <queue>Social_Media_Facebook_Case_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Social_Media_Open_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.STATUS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.ORIGIN</field>
+            <operation>equals</operation>
+            <value>Social Media</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Resolved</value>
+        </filters>
+        <label>Social Media Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Social_Media_Other_Case_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Resolved,Closed</value>
+        </filters>
+        <label>Social Media Other Case Queue</label>
+        <queue>Social_Media_Other_Case_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TalkTalk_Community_Case_Queue</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Resolved,Closed</value>
+        </filters>
+        <label>TalkTalk Community Case Queue</label>
+        <queue>TalkTalk_Community_Case_Queue</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>TalkTalk_Community_Open_Cases</fullName>
+        <columns>CASES.CASE_NUMBER</columns>
+        <columns>NAME</columns>
+        <columns>CASES.SUBJECT</columns>
+        <columns>CASES.CREATED_DATE</columns>
+        <columns>CASES.STATUS</columns>
+        <columns>Board_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CASES.ORIGIN</field>
+            <operation>equals</operation>
+            <value>TalkTalk Community</value>
+        </filters>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Resolved</value>
+        </filters>
+        <label>Community Open Cases</label>
+    </listViews>
+    <listViews>
+        <fullName>Twitter_TalkTalk_Mentions</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Resolved</value>
+        </filters>
+        <label>Twitter TalkTalk Mentions</label>
+        <queue>Twitter_TalkTalk_Mentions</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Twitter_talktalkcare_Mentions</fullName>
+        <filterScope>Queue</filterScope>
+        <filters>
+            <field>CASES.STATUS</field>
+            <operation>notEqual</operation>
+            <value>Closed,Resolved</value>
+        </filters>
+        <label>Twitter @talktalkcare Mentions</label>
+        <queue>Twitter_talktalkcare_Mentions</queue>
+        <sharedTo>
+            <allInternalUsers></allInternalUsers>
+        </sharedTo>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypeTrackHistory>true</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Collection</fullName>
+        <active>true</active>
+        <businessProcess>R6Service__SocialMedia</businessProcess>
+        <label>Collection</label>
+        <picklistValues>
+            <picklist>Case_Sub_Origin__c</picklist>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter %40mention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter General</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Customer to call Contact Centre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation form completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DPA_Status__c</picklist>
+            <values>
+                <fullName>DPA Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPA Not Checked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>DPA Passed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Live_Agent</fullName>
+        <active>true</active>
+        <businessProcess>R6Service__SocialMedia</businessProcess>
+        <description>Case record type for Live Chat</description>
+        <label>Live Agent</label>
+        <picklistValues>
+            <picklist>Case_Outcome__c</picklist>
+            <values>
+                <fullName>Billing Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Boost %E2%80%93 Add boost %E2%80%93 Provide details of boost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Call pricing %E2%80%93 International</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Channels</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor comparison %E2%80%93 provide competitor detail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract %E2%80%93 End date enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract %E2%80%93 Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract %E2%80%93 length of contract</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract - cancellation</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer looking for a better offer %E2%80%93 provide details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer wants to cancel account %E2%80%93 provide details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email address query</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fibre enquiry %E2%80%93 package%2C price information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home mover</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation %E2%80%93 Powerline Adaptors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation query %E2%80%93 Price%2C process%2C timescales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other %E2%80%93 please insert question asked%3F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package details %E2%80%93 what is included in the package %3F</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Router questions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speed requirements</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV %E2%80%93 Aerial%2FAvailability%2FMulti room question</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV %E2%80%93 Self install</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV %E2%80%93 Upgrade to TV</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV %E2%80%93 YouView box details</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Unable to get TV or Broadband %E2%80%93 Select reason below</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VLR %E2%80%93 Adding VLR</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VLR %E2%80%93 Payment issue</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VLR %E2%80%93 Pricing</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Website issue %E2%80%93 Issues signing up online %E2%80%93 provide details</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Case_Sub_Origin__c</picklist>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter %40mention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Customer Gone Away</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Customer to call Contact Centre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation form completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DPA_Status__c</picklist>
+            <values>
+                <fullName>DPA Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPA Not Checked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>DPA Passed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Live Chat</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Advised to call Homemovers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BB - Speed Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CS Query- Advised To Contact Tech</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cancellation - Disconection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Competitor -Price</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract %E2%80%93 End Date Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contract - Commitment</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Equipment - Youview Box</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation - Fee Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation - Powerline Adaptors</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Installation - Self Install</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MyAccount - Boost Added</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>MyAccount - Order Queries</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Calls - Call Charges</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other - Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package - Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Package - Info only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Router Specification - Enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save - Added Boost</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Save - VLR Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV - Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TV%2FBB - Not Available</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical fault</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VLR - Info Given</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>VLR - Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>R6Service__SocialMedia</fullName>
+        <active>true</active>
+        <businessProcess>R6Service__SocialMedia</businessProcess>
+        <label>Social Media</label>
+        <picklistValues>
+            <picklist>Case_Sub_Origin__c</picklist>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forum</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter %40aolcareuk Mentions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter %40mention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter AOL Mentions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter General</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Call-back Booked</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Response Needed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Responded to Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DPA_Status__c</picklist>
+            <values>
+                <fullName>DPA Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPA Not Checked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>DPA Passed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Social Hub</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical fault</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>TalkTalk_Community</fullName>
+        <active>true</active>
+        <businessProcess>R6Service__SocialMedia</businessProcess>
+        <description>Case record type for the TalkTalk Lithium Community</description>
+        <label>TalkTalk Community</label>
+        <picklistValues>
+            <picklist>Case_Sub_Origin__c</picklist>
+            <values>
+                <fullName>Facebook</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Twitter %40mention</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Close_Reason__c</picklist>
+            <values>
+                <fullName>Customer to call Contact Centre</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Escalation form completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incorrect Transfer</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DPA_Status__c</picklist>
+            <values>
+                <fullName>DPA Failed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DPA Not Checked</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>DPA Passed</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>TalkTalk Community</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sales enquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Technical fault</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Feature Request</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Question</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>CASES.CASE_NUMBER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.SUBJECT</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CASES.PRIORITY</customTabListAdditionalFields>
+        <listViewButtons>Get_Next_List</listViewButtons>
+        <lookupDialogsAdditionalFields>CASES.CASE_NUMBER</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.SUBJECT</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>CASES.STATUS</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.CASE_NUMBER</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.SUBJECT</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <webLinks>
+        <fullName>Get_Next_Case</fullName>
+        <availability>online</availability>
+        <description>Get Next Case owned by the PreviousOwnerId set on this current case</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Get Next</masterLabel>
+        <openType>sidebar</openType>
+        <page>CaseGetNextDetail</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>Get_Next_List</fullName>
+        <availability>online</availability>
+        <description>Get the Next Case owned by the Queue pertaining to the currently selected List View</description>
+        <displayType>massActionButton</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Get Next</masterLabel>
+        <openType>sidebar</openType>
+        <page>CaseGetNextList</page>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+    </webLinks>
+    <webLinks>
+        <fullName>R6Service__SendMessage</fullName>
+        <availability>online</availability>
+        <description>When a user clicks on this a page will pop up allowing him to send a message to Facebook/Twitter</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reply to Last Post</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/support/console/23.0/integration.js&quot;)};
+
+var isTwitter = {! CONTAINS(LOWER(Case.R6Service__MediaProvider__c), &apos;twitter&apos;)};
+var isFacebook = {! CONTAINS(LOWER(Case.R6Service__MediaProvider__c), &apos;facebook&apos;)};
+var isSupportedProvider = isTwitter || isFacebook;
+
+var isConsole = typeof(srcUp) == &quot;function&quot;;
+
+if(isSupportedProvider) {
+    if(isConsole) {
+        srcUp(&quot;/apex/R6Service__CaseSendMessageRedirect?id={!Case.Id}&amp;isdtp=vw&quot;);
+    } else {
+        window.open(&quot;/apex/R6Service__CaseSendMessageRedirect?id={!Case.Id}&quot;,  &quot;_self&quot;);
+    }
+} else {
+    window.open(&quot;/apex/R6Service__CaseSendMessageRedirect?id={!Case.Id}&quot;,  &quot;_blank&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Re_Assign_Contact</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Re-Assign Contact</masterLabel>
+        <openType>sidebar</openType>
+        <page>ReAssignContact</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,53 @@
+<apex:page controller="LiveAgentDeploymentController">
+
+<h1>Welcome</h1>
+   Thank you for contacting customer support
+
+<a id="liveagent_button_online_573b0000000PEpH" href="javascript://Chat" style="display: none;" onclick="liveagent.startChat('573b0000000PEpH')">Online</a><div id="liveagent_button_offline_573b0000000PEpH" style="display: none;">Offline</div><script type="text/javascript">
+if (!window._laq) { window._laq = []; }
+window._laq.push(function(){liveagent.showWhenOnline('573b0000000PEpH', document.getElementById('liveagent_button_online_573b0000000PEpH'));
+liveagent.showWhenOffline('573b0000000PEpH', document.getElementById('liveagent_button_offline_573b0000000PEpH'));
+});</script>
+
+<br/>
+
+<br/>
+
+<div id="liveagent_invite_button_573b0000000PIu7" name="lpInviteLayer-956" style="z-index: 10000;position: absolute;display:none;left: 576px;top: 171px;">
+    <table class="lpInviteChatTbl" id="lpInviteTable-956" border="0" cellspacing="0" cellpadding="0" style="border-left:none; border-right:none;">
+        <tbody>
+            <tr>
+                <td style="border-bottom:none; border-left:none; background:none">
+                    <a class="lpInviteChatHrefAccept" name="needRef-956" id="needRef-956" href="#" title="Invitation popup window for live chat with an online representative" target="_self">
+                        <img class="lpInviteChatImgAccept" onclick="liveagent.startChat('573b0000000PIu7')" id="need_help956" src="http://m0.ttxm.co.uk/sites/www.talktalk.co.uk/images/HELP/churninvite/need_help_off.gif" alt="Invitation popup window for live chat with an online representative" style="display: block; border: 0;"/>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td style="border-bottom:none; background:none">
+                    <a class="lpInviteChatHrefClose" name="needRefClose-956" id="needRefClose-956" href="#" title="Close Chat Invitation" target="_self">
+                        <img class="lpInviteChatImgClose" onclick="liveagent.rejectChat('573b0000000PIu7')" id="need_close956" src="http://m0.ttxm.co.uk/sites/www.talktalk.co.uk/images/HELP/churninvite/close_off.gif" alt="Close Chat Invitation" style="display: block; border: 0;"/>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+CLI: 
+<input type="text" id="CLI" name="CLI" value="{!CLI}"/>
+<input type="hidden" name="liveagent.prechat:CLI" value="document.getElementById('CLI').value"/>   
+<input type="hidden" name="liveagent.prechat.query:CLI" value="Asset,Asset.CLI__c" />
+
+<script type='text/javascript' src='https://c.la2w1.salesforceliveagent.com/content/g/deployment.js'></script>
+<script type='text/javascript'>
+liveagent.addCustomDetail('CLI', document.getElementById('CLI').value).map('Asset', 'CLI__c', false, false);
+liveagent.addCustomDetail('Contact Name', 'John Doe').map('Contact', 'Name', true, false);
+liveagent.addCustomDetail('Product', 'Product Value').saveToTranscript('Contact_Us_Prod__c');
+liveagent.addCustomDetail('Sub Product', 'Sub Product Value').saveToTranscript('Contact_Us_Sub_Prod__c');
+liveagent.addCustomDetail('DPA Status', 'DPA Passed').saveToTranscript('DPA_Verified__c');
+liveagent.init('https://d.la2w1.salesforceliveagent.com/chat', '572b0000000PEkp', '00Db0000000Yvf3');
+</script>
+
+
+</apex:page>

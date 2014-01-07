@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account_Balance__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Account_Balance__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Balance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Account_Key__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Account_Key__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Key</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Amount_Due__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Amount_Paid__c</fullName>
+        <defaultValue>0.00</defaultValue>
+        <externalId>false</externalId>
+        <label>Amount Paid</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Bill_Cycle__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Bill_Cycle_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Bill Cycle</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Billing_Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Billing Account</label>
+        <referenceTo>Billing_Account__c</referenceTo>
+        <relationshipLabel>Promise to Pay</relationshipLabel>
+        <relationshipName>Promise_to_Pay</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Collection_Path__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Collection Path</label>
+        <referenceTo>Collection_Path__c</referenceTo>
+        <relationshipLabel>Promise to Pay</relationshipLabel>
+        <relationshipName>Promise_to_Pay</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DAYS_121_150__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_121_150__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 121-150</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_151_180__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_151_180__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 151-180</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_181_210__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_181_210__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 181-210</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_211_240__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_211_240__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 211-240</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_241_270__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_241_270__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 241-270</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_271_300__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_271_300__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 271-300</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_301_330__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_301_330__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 301-330</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_31_60__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_31_60__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 31-60</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_331_360__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_331_360__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 331-360</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_61_90__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_61_90__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 61-90</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DAYS_91_120__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.DAYS_91_120__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>DAYS 91-120</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Next_Bill_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Next_Bill_Date__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Next Bill Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>One_off_Payment_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>One_off_Payment__c - One_off_Payment_Received__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>One off Payment Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>One_off_Payment_Received__c</fullName>
+        <externalId>false</externalId>
+        <label>One off Payment Received</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>One_off_Payment__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>One off Payment</label>
+        <precision>17</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Outcome__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( ISPICKVAL(Status__c, &apos;Saved&apos;) , &apos;Not Active&apos;, 
+	 IF(ISPICKVAL(Status__c,  &apos;Pending Approval&apos;), &apos;Not Active&apos;,
+                 IF(ISPICKVAL(Status__c,  &apos;Open&apos;) &amp;&amp; Billing_Account__r.Payment_Defaulted__c, &apos;Defaulted&apos;,   
+		          IF( ISPICKVAL(Status__c,  &apos;Open&apos;), &apos;Active&apos;, 
+			 IF(ISPICKVAL(Status__c, &apos;Closed&apos;), IF(Amount_Paid__c &gt;= 0.95*Amount_Due__c , &apos;Success&apos;, &apos;Defaulted&apos;), &apos;Defaulted&apos;)
+ 		          ) 
+                 )  
+ 	 )  
+ )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Outcome</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Method__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Payment_Method_Desc__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Payment Method</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Preferred_Communication_Method__c</fullName>
+        <externalId>false</externalId>
+        <label>Preferred Communication Method</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Email</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Letter</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Contact_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Primary_Contact__r.FirstName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Primary Contact Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Promise_To_Pay_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Promise To Pay Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Proposed_Payment_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Payment Date</label>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Saved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Total_Over_Due__c</fullName>
+        <externalId>false</externalId>
+        <formula>Billing_Account__r.Total_Over_Due__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Over Due</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <label>Promise to Pay</label>
+    <nameField>
+        <displayFormat>P2P-{00000000}</displayFormat>
+        <label>Name</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Promise to Pay</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Approved_P2P_cannot_be_modified</fullName>
+        <active>false</active>
+        <description>P2P’s once created cannot be modified. If a new P2P is required the existing P2P needs to be closed and a new P2P created</description>
+        <errorConditionFormula>NOT( $Setup.No_Validations__c.Flag__c ) &amp;&amp; 
+NOT(ISNEW()) &amp;&amp;
+NOT(ISPICKVAL((PRIORVALUE( Status__c )) , &apos;Saved&apos; ))</errorConditionFormula>
+        <errorMessage>Once a Promise to Pay is Open it cannot be modified.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Cannot_create_if_Aged_Debt_more_than_60d</fullName>
+        <active>false</active>
+        <description>It is not possible to create P2P if the aged debt is greater than 60 days</description>
+        <errorConditionFormula>AND(NOT($Setup.No_Validations__c.Flag__c),
+ISNEW(),
+OR(Billing_Account__r.DAYS_61_90__c &gt; 0, 
+Billing_Account__r.DAYS_91_120__c &gt; 0, 
+Billing_Account__r.DAYS_121_150__c &gt; 0, 
+Billing_Account__r.DAYS_151_180__c &gt; 0,
+Billing_Account__r.DAYS_181_210__c &gt; 0,
+Billing_Account__r.DAYS_211_240__c &gt; 0,
+Billing_Account__r.DAYS_241_270__c &gt; 0, 
+Billing_Account__r.DAYS_271_300__c &gt; 0, 
+Billing_Account__r.DAYS_301_330__c &gt; 0,
+Billing_Account__r.DAYS_331_360__c &gt; 0))</errorConditionFormula>
+        <errorMessage>It is not possible to create P2P if the aged debt is greater than 60 days.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proposed_Payment_Date_NotMore_Than_Xd</fullName>
+        <active>true</active>
+        <description>Proposed date is more than acceptable tolerance in future.</description>
+        <errorConditionFormula>NOT($Setup.No_Validations__c.Flag__c) &amp;&amp; (Proposed_Payment_Date__c &gt; TODAY() +  $Setup.Collections_Settings__c.P2P_Payment_Days_from_Now_Tolerance__c )</errorConditionFormula>
+        <errorMessage>The Proposed Payment Date cannot be further than the specified amount of days from now.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Proposed_Payment_Date_Validation</fullName>
+        <active>false</active>
+        <description>It is not possible to enter a P2P Proposed Payment Date that exceeds the Next Bill Date + 5days</description>
+        <errorConditionFormula>Proposed_Payment_Date__c &gt;  Next_Bill_Date__c + 5</errorConditionFormula>
+        <errorMessage>It is not possible to enter a P2P Proposed Payment Date that exceeds the Next Bill Date + 5days</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Close_P2P</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Close P2P</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/ClosePaymentPlan?p2pid={!Promise_to_Pay__c.Id}&amp;billingAccId={!Promise_to_Pay__c.Billing_AccountId__c}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>New_Promise_to_Pay</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>New Promise to Pay</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/a0U/e?CF00Nb0000005DLS1={!Billing_Account__c.Name}&amp;CF00Nb0000005DLS1_lkid={!Billing_Account__c.Id}&amp;retURL={!Billing_Account__c.Id}&amp;00Nb0000005DLRy={!Billing_Account__c.Total_Over_Due__c}</url>
+    </webLinks>
+</CustomObject>

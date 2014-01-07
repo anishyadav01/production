@@ -1,0 +1,121 @@
+<apex:page controller="FilterCollStreamController" title="Filter Collection Streams">
+<style>
+    body .bPageBlock .pbBody .red .pbSubheader{
+        background-color:#c00000;
+    }
+
+    body .bPageBlock .pbBody .purple .pbSubheader{
+        background-color:#8B3991;
+    }
+    body .bPageBlock .pbBody .purple .pbSubheader h3{
+        color:#000;
+    }
+
+    body .bPageBlock .pbBody .grey .pbSubheader{
+        background-color:#c0c0c0;
+    }
+    body .bPageBlock .pbBody .grey .pbSubheader h3{
+        color:#000;
+    }
+</style>
+
+<apex:form id="searchForm">
+<apex:pageblock id="pb">
+<apex:pageMessages ></apex:pageMessages>
+   <apex:outputPanel styleClass="purple" layout="block">
+	    <apex:pageblockSection id="pb1" title="Filter Conditions">
+        	<apex:pageBlockSectionItem >
+	        	<apex:outputLabel for="commCode" value="Communication Code Type" style="align:center"/>
+	        	<apex:selectList required="true" size="1" id="commCode" value="{!selectedCommCode}" style="align:center">
+					<apex:selectOptions value="{!codeOptions}"/>
+				</apex:selectList>
+			</apex:pageBlockSectionItem>
+
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel for="numberOfResults" value="Number of Results to Fetch"/>
+				<apex:inputText value="{!NumberOfResultsToFilter}" id="numberOfResults" />
+			</apex:pageBlockSectionItem>
+
+			<apex:pageBlockSectionItem >
+				<apex:outputLabel for="commType" value="Communication Type"/>
+	        	<apex:selectList required="true" size="1" id="commType" value="{!selectedCommType}">
+					<apex:selectOptions value="{!commTypeOptions}"/>
+				</apex:selectList>
+			</apex:pageBlockSectionItem>
+	    </apex:pageBlockSection>
+
+		<apex:outputPanel style="text-align:center;" layout="block">
+        	<apex:commandbutton value="Search Accounts" action="{!SearchAccounts}" rerender="pb,results"/>
+ 		</apex:outputPanel>
+   </apex:outputPanel>
+</apex:pageblock>
+
+<apex:pageblock id="results" rendered="{!hasResults}">
+<apex:outputPanel styleClass="purple" layout="block">
+    <apex:pageBlockSection title="Filtered Billing Accounts (Total List Size: {!TotalSize})" collapsible="true" columns="1">
+    	<apex:outputPanel style="font-weight: bold">
+           		<br/>
+           		Note that only first {!TotalSize} results are shown of total {!TotalNumberResultsPossible} results filtered.
+           		<br/>
+           </apex:outputPanel>
+    	<apex:outputPanel style="text-align:right;" layout="block">
+	         	<apex:commandLink action="{!Beginning}" title="Beginning" value="<<" rendered="{!NOT(disablePrevious)}" rerender="results"/>
+	            &nbsp;
+	            <apex:commandLink action="{!Previous}" title="Previous" value="<" rendered="{!NOT(disablePrevious)}" rerender="results"/>
+	            &nbsp;
+	            <apex:commandLink action="{!Next}" title="Next" value=">" rendered="{!NOT(disableNext)}" rerender="results"/>
+	            &nbsp;
+	            <apex:commandLink action="{!End}" title="End" value=">>" rendered="{!NOT(disableNext)}" rerender="results"/>
+	         	&nbsp;
+     	</apex:outputPanel>
+       <apex:outputPanel layout="none" id="resultsPanel">
+           <table class="list" style="width: 80%" border="0" cellpadding="0" cellspacing="0" align="center">
+               <thead class="rich-table-thead">
+                   <tr class="headerRow">
+                       <th class="headerRow">Account Name</th>
+                       <th class="headerRow">Contact Name</th>
+                       <th class="headerRow">Account Number</th>
+                       <th class="headerRow">Unbilled Amount</th>
+                       <th class="headerRow">Account Balance</th>
+                       <th class="headerRow">Current Overdue</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <apex:repeat var="res" value="{!pagedResults}">
+                       <tr class="dataRow">
+                           <td class="dataCell">
+                               {!res.Billing_Account__r.Name}
+                           </td>
+                           <td class="dataCell">
+                               {!res.Billing_Account__r.Primary_Contact__r.Name}
+                           </td>
+                           <td class="dataCell">
+                               {!res.Billing_Account__r.Account_Key__c}
+                           </td>
+                           <td class="dataCell">
+                               {!res.Billing_Account__r.UNBILLED_AMOUNT__c}
+                           </td>
+                           <td class="dataCell">
+                               {!res.Billing_Account__r.Account_Balance__c}
+                           </td>
+                           <td class="dataCell">
+                               {!res.Billing_Account__r.CURRENT_OVERDUE__c}
+                           </td>
+                       </tr>
+                   </apex:repeat>
+               </tbody>
+           </table>
+           <br/>
+           Showing Page #{!pageNumber} of {!totalPages}
+
+       </apex:outputPanel>
+       <apex:outputPanel style="text-align:center;" layout="block">
+         	<br/>
+         	<apex:commandButton action="{!generateFile}" value="Generate File" disabled="{!NOT(validSearchDone)}"/>
+         	&nbsp;
+       </apex:outputPanel>
+    </apex:pageBlockSection>
+  </apex:outputPanel>
+</apex:pageblock>
+</apex:form>
+</apex:page>

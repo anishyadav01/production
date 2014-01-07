@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaticResource xmlns="http://soap.sforce.com/2006/04/metadata">
+    <cacheControl>Public</cacheControl>
+    <contentType>image/gif</contentType>
+    <description>This is an animated loading icon used in the chat window when the customer is in a Q or being passed to an agent.</description>
+</StaticResource>

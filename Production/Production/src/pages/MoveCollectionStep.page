@@ -1,0 +1,17 @@
+<apex:page standardController="Billing_Account__c" extensions="MoveCollectionStepController">
+    <apex:form >
+        <apex:sectionHeader title="Move Collection Step"/>
+    
+        <apex:pageblock >
+            <apex:pageBlockSection >
+                <apex:inputField value="{!billingAccount.Current_Treatment_Path__c}"/>
+                <apex:inputField value="{!billingAccount.Current_Treatment_Step__c}"/>                 
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Move" action="{!moveStep}"/>
+            	<apex:commandButton value="Move to default next step" action="{!moveToDefaultStep}"/>
+            	<apex:commandButton value="Exit Collection" action="{!exitCollection}"/>
+            </apex:pageBlockButtons>
+        </apex:pageblock>
+    </apex:form>
+</apex:page>

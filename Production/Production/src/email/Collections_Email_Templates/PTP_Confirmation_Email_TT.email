@@ -1,0 +1,32 @@
+<p align="right"><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HJe&oid=00Dg0000000DIeW" alt="Talk Talk Telephone Number" /></p>
+
+<p> Reference : PTP/{!Promise_to_Pay__c.Account_Key__c}</p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000007o0E&oid=00Dg0000000DIeW&lastMod=1379087288000" alt="Talk Talk Logo" /></p>
+
+<p>Dear {!Promise_to_Pay__c.Primary_Contact_Name__c} ,</p>
+
+<p>Thank you for contacting Customer Payment Support.  Please see below details of your arrangement; </p>
+
+<p>
+Balance Due : {!Promise_to_Pay__c.Amount_Due__c}	New agreed payment date : {!Promise_to_Pay__c.Proposed_Payment_Date__c}
+</p>
+
+<p> This was agreed with you on {!Promise_to_Pay__c.CreatedDate}. If you fail to pay the agreed amount on or by this date, you may receive communications from our Customer Payment Support Team requesting payment and you may also have your services with us restricted.  Please take note of the ways to make payment to us below;  </p>
+
+
+<p><a href="www.talktalk.co.uk"><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g000000083Ax&oid=00Dg0000000DIeW&lastMod=1379087071000" alt="Payment Methods" 
+/></a></p>
+
+<p> If you need to discuss any details relating to this agreement, then please contact us using the Customer Payment Support Number above.</p>
+
+<p> You can save £54 a year by setting up a Direct Debit, to find out how contact the Customer Payment Support Team or visit  <a href="www.talktalk.co.uk">www.talktalk.co.uk</a>
+</p>
+
+<br/>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HKI&oid=00Dg0000000DIeW&lastMod=1379087144000" alt="Talk Talk brighter home"/></p>
+
+<p style="color:#C0C0C0; font-size:8px">This message is generated automatically. Please do not respond to this email. Emails are not monitored </p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HKh&oid=00Dg0000000DIeW" alt="Talk Talk Company Info" /></p>

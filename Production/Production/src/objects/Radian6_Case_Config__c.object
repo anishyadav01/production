@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Get_Next_Unauthorised__c</fullName>
+        <description>Message displayed to users who are not authorised to use the Get Next button</description>
+        <externalId>false</externalId>
+        <label>Get Next Unauthorised</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_Cases_Available__c</fullName>
+        <description>Alert displayed when no cases are found</description>
+        <externalId>false</externalId>
+        <label>No Cases Available</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Radian_6_Profiles__c</fullName>
+        <description>Comma Separated Profile Ids who are permitted to use the Get Next Button</description>
+        <externalId>false</externalId>
+        <label>Radian 6 Profiles</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Radian_6_Queues__c</fullName>
+        <description>Comma Separated List of Radian 6 Queues</description>
+        <externalId>false</externalId>
+        <label>Radian 6 Queues</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Radian6 Case Config</label>
+</CustomObject>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <fields>
+        <fullName>AgentId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TIme_Spent_Away_MS__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR ( TimeInAwayStatus /3600) )&amp;&apos;:&apos; &amp; TEXT( FLOOR( (MOD( TimeInAwayStatus ,3600))/60 ) ) &amp; &apos; :&apos; &amp; TEXT ( MOD(MOD( TimeInAwayStatus ,3600),60) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>TIme Spent Away MS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Idle_MS__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR (TimeIdle/3600) )&amp;&apos;:&apos; &amp; TEXT( FLOOR( (MOD(TimeIdle,3600))/60 )  ) &amp; &apos; :&apos; &amp; TEXT ( MOD(MOD(TimeIdle,3600),60)  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Idle MS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Spent_In_Chats_MS__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR ( TimeInChats /3600) )&amp;&apos;:&apos; &amp; TEXT( FLOOR( (MOD( TimeInChats ,3600))/60 ) ) &amp; &apos; :&apos; &amp; TEXT ( MOD(MOD( TimeInChats ,3600),60) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Spent In Chats MS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Spent_Online_MS__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR ( TimeInOnlineStatus /3600) )&amp;&apos;:&apos; &amp; TEXT( FLOOR( (MOD( TimeInOnlineStatus ,3600))/60 ) ) &amp; &apos; :&apos; &amp; TEXT ( MOD(MOD( TimeInOnlineStatus ,3600),60) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Spent Online MS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Time_Spent_at_Capacity_MS__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(FLOOR (TimeAtCapacity/3600) )&amp;&apos;:&apos; &amp; TEXT( FLOOR( (MOD(TimeAtCapacity,3600))/60 ) ) &amp; &apos; :&apos; &amp; TEXT ( MOD(MOD(TimeAtCapacity,3600),60) )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Time Spent at Capacity MS</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Agent</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LoginTime</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LogoutTime</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Name</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Agent</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LoginTime</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>LogoutTime</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Name</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Agent</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LoginTime</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>LogoutTime</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Name</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Agent</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LoginTime</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LogoutTime</searchResultsAdditionalFields>
+    </searchLayouts>
+</CustomObject>

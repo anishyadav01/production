@@ -1,0 +1,261 @@
+<apex:page standardController="Payment_Plan__c" extensions="PaymentPlanController" id="paymentPlanPage">
+
+<script type="text/javascript">
+    function confirmation()  
+    {
+        return confirm('Please confirm that the customer has agreed to this payment plan and you would like to save it');
+    }
+
+    function showApprovalAlert() {
+        var selectedTerm =  document.getElementById ("paymentPlanPage:frmMaster:masterPageBlock:criteriaSection:termList");                                               
+        //alert(selectedTerm.value);
+        
+        var userProfile = '{!$Profile.Name}';
+        // alert('{!$Profile.Name}');
+        
+        var approvalTheshold = '{!collSettings.Approval_Term_Threshold__c}';
+        
+        
+        if (approvalTheshold != null && approvalTheshold < selectedTerm.value && userProfile != 'CPS Team Lead') {
+            alert('This Payment Plan needs to be submitted for Approval. Please contact your Team Lead');
+        }
+    }
+    
+        function addCharge1(){
+            var valToPass = document.getElementById ("paymentPlanPage:frmMaster:masterPageBlock:MRCCalculationSection:OneTimeCharges:chargesDropdown").value ;
+            addCharge( valToPass );
+            
+            //updateMRC();
+        } 
+        
+        function removeChargeFromList1( valToPass ){
+            removeChargeFromList( valToPass );
+            
+            //updateMRC ();
+        }     
+    
+        
+    
+</script>     
+
+  <apex:form id="frmMaster">
+    		
+       <apex:actionStatus id="showStatus"  startText=" Calculating Payment Plan, please wait..."  stopText=""/>
+       <apex:actionFunction name="calculate" action="{!calculatePayments}" status="showStatus" reRender="dynamicPanel, errorBlock"/>
+       
+       <apex:outputPanel id="msgBlock" rendered="{!NOT(isReadOnlyMode)}">
+         <apex:pageMessage severity="ERROR" detail="NOTE: You will not be able to save any changes because {!cannotSaveReason}" rendered="{!NOT(canSave)}" />
+       </apex:outputPanel> 
+       
+       <apex:outputPanel id="msgDisconnectionInfo" rendered="{!accountDisconnected}">
+         <apex:pageMessage severity="ERROR" detail="{!accountDisconnectedError}"/>
+       </apex:outputPanel>
+       
+       <apex:outputPanel id="msgDebtInfo" rendered="{!debt60DayExists}">
+         <apex:pageMessage severity="WARNING" detail="{!debt60DayExistsError}"/>
+       </apex:outputPanel>  
+       
+       <apex:outputPanel id="msgMissingInfo" rendered="{!emailBrandExists}">
+         <apex:pageMessage severity="WARNING" detail="{!emailBrandExistsError}"/>
+       </apex:outputPanel>
+          
+       <apex:pageBlock id="masterPageBlock">
+      
+           <apex:pageMessages rendered="true" id="errorBlock" />
+      
+          <!-- The editable version -->
+          <!-- <apex:pageblockSection title="Enter Calculation Parameters" id="criteriaSection" rendered="{!NOT(isReadOnlyMode)}"> -->
+          
+             <apex:pageblockSection title="Customer Details" id="criteriaSection" >
+                 <apex:outputField label="Account Key" value="{!billingAccount.Account_Key__c}" />
+                 <apex:outputField label="Contact Name" value="{!billingAccount.Primary_Contact__r.Name}" />
+                 <apex:outputField label="Brand" value="{!billingAccount.Brand__c}" />
+                 <apex:outputField label="Total Overdue" value="{!billingAccount.Total_Over_Due__c}" />
+                 <apex:outputField label="Unbilled Amount" value="{!billingAccount.UNBILLED_AMOUNT__c}" />
+                 <apex:outputField value="{!billingAccount.Call_Limit__c}" />
+            </apex:pageblockSection> 
+            
+            <!--apex:pageblockSection title="MRC Calculations" id="MRCCalculationSection" columns="2" > 
+                    <apex:pageblockSection id="OneTimeCharges" columns="3" > 
+                        <apex:outputlabel value="Select Charges" />                 
+                        <apex:selectList multiselect="false" size="1" id="chargesDropdown">
+                            <apex:selectOptions value="{!oneTimeChargesAndAdjustment}"/>
+                        </apex:selectList>
+                        <apex:outputlabel value="" />
+                        <apex:outputlabel value="" />                 
+
+                        <apex:outputPanel onclick="addCharge1()" styleClass="btn"> 
+                                Add Charge
+                            </apex:outputPanel>
+                             <apex:outputlabel value="" />
+                    </apex:pageblockSection>
+                    
+                    <!--apex:inputText label="One Off Charges" id="OneOffCharges"/->                 
+                <apex:pageblockTable value="{!mrcAndChargesList}" var="item" id="showstate">
+                    <apex:column ><apex:outputPanel onclick="removeChargeFromList1('{!item.Charge_Name__c}')" styleClass="btn" rendered="{!item.Charge_Type__c == 'Charge' ||  item.Amount__c == 0 }">X</apex:outputPanel></apex:column>
+                    <apex:column value="{!item.Charge_Name__c}" headerValue="Name" id="mrcChargeName"/> 
+                    <apex:column headerValue="Amount" ><apex:outputField value="{!item.Amount__c}" id="mrcAmount" /></apex:column>
+                    <apex:column headerValue="Adjustment Type"><apex:inputField value="{!item.Adjustment_Type__c}" rendered="{!item.Charge_Type__c != 'Charge'}" id="adjustmentType" onChange="updateMRC()" /></apex:column>
+                    <apex:column headerValue="Adjustment Amount"><apex:inputField value="{!item.Adjustment_Amount__c}" rendered="{!item.Charge_Type__c != 'Charge'}" id="adjustmentAmount" onChange="updateMRC()"/></apex:column>
+                </apex:pageblockTable>
+
+                <apex:outputText value=""/> 
+            </apex:pageblockSection-->
+            
+            
+            <apex:pageblockSection title="Enter Calculation Parameters" id="paycriteriaSection"  columns="1">
+            
+                <apex:pageblockSection id="paycriteriaSection" > 
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Total MRC" />
+						<apex:outputPanel >
+							<div class="requiredInput">
+								<div class="requiredBlock"></div>
+		                     	<apex:inputField value="{!Payment_Plan__c.MRC1__c}"  id="MRC_To_Update" />	
+							</div>
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+
+					<apex:inputField value="{!Payment_Plan__c.One_off_Payment__c}"/>
+					          
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Date of First Installment" />
+						<apex:outputPanel >
+							<div class="requiredInput">
+								<div class="requiredBlock"></div>
+								<apex:inputField value="{!Payment_Plan__c.Date_of_First_Installment__c}"  />
+							</div>
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Number of Installments" />
+						<apex:outputPanel >
+							<div class="requiredInput">
+								<div class="requiredBlock"></div>
+		                     	<apex:inputField value="{!Payment_Plan__c.Number_of_Installments__c}"  id="termList" />	
+							</div>
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="Proposed Frequency" />
+						<apex:outputPanel >
+							<div class="requiredInput">
+								<div class="requiredBlock"></div>
+                     			<apex:inputField value="{!Payment_Plan__c.Proposed_Frequency__c}"  /> 
+							</div>
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+
+                      
+                     <apex:inputField value="{!Payment_Plan__c.New_Call_Limit__c}"  />
+                     <apex:inputField value="{!Payment_Plan__c.Use_New_Call_Limit__c}"/>
+    
+                     <apex:inputField value="{!Payment_Plan__c.Imminent_Credit__c}" />
+                     <apex:inputField value="{!Payment_Plan__c.Imminent_Debit__c}" />
+                     <apex:inputField value="{!Payment_Plan__c.Include_Additional_MRC__c}" />
+						<apex:outputLabel value="" />
+
+					
+
+                    <apex:outputPanel style="text-align:center;" layout="block">  
+                        <apex:commandButton onclick="calculate(); return false;" value="Calculate Payments" />
+                        &nbsp;
+                    </apex:outputPanel>                 
+
+                </apex:pageblockSection>                         
+                    
+                    <apex:outputpanel id="dynamicPanel" style="width:100%" >
+                        <apex:pageblockSection id="calcResults" title="Proposed Payment Plan" rendered="{!NOT(isReadOnlyMode) && NOT(ISBLANK(Payment_Plan__c.Id)) || (planProduced)}" columns="1"> <!--rendered="{!planProduced}" -->
+                        
+                        <apex:outputpanel id="wrapperPanel" title="Proposed Payment Plan" >
+                            <div>
+                                <apex:outputLabel style="font-weight: bold" for="resultId" value="Summary: "></apex:outputLabel>
+                                <apex:outputText value="{!PP_Result}" id="resultId" style="font-weight: bold"></apex:outputText> 
+                                <br/>
+                                <apex:outputText value="{!dueDateOnResumeMessage}" style="font-weight: bold"/>
+                            </div>
+                             
+                            <!-- a few fields to be retrieved in the soql in the controller -->
+                            <apex:outputField value="{!Payment_Plan__c.Number_of_Installments__c}" rendered="false"/>
+                            <apex:outputField value="{!Payment_Plan__c.Status__c}" rendered="false"/>
+                            <apex:outputField value="{!Payment_Plan__c.Billing_Account__c}" rendered="false"/>
+                            <apex:outputField value="{!Payment_Plan__c.Collection_Path__c}" rendered="false" /> 
+                            
+                            
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <apex:pageBlockTable id="ppItemsList" value="{!ppItems}" var="item" style="width:100%">
+                                          <apex:column headerValue="Due Date" style="width:250px">
+                                              <apex:outputText value="{0,date,dd'-'MMM'-'yyyy}">
+                                                    <apex:param value="{!item.Due_Date__c}" />
+                                                </apex:outputText>
+                                          </apex:column>
+                                          <apex:column headerValue="Amount" style="width:200px;text-align:right">
+                                               <apex:outputText value="{0,number, #,##0.00}">
+                                                    <apex:param value="{!item.Amount__c}" />
+                                                </apex:outputText>
+                                          </apex:column>
+                                        </apex:pageBlockTable>
+                                    </td>
+                                    <td style="width:200px">&nbsp;</td>
+                                    <td>
+                                        <apex:pageBlockTable id="detailsOfCalculationList" value="{!detailsOfCalculations}" var="detailOfCalculation" style="width:100%">
+                                            <apex:column headerValue="Details" style="width:250px">
+                                                <apex:outputLabel value="{!detailOfCalculation.calculationFormula}"/>
+                                            </apex:column>
+                                            <apex:column headerValue="Amount" style="text-align:right">
+                                                 <apex:outputText style="width:250px" >
+                                                       <apex:outputLabel value="{!detailOfCalculation.total}"/>
+                                                   </apex:outputText>
+                                            </apex:column>
+                                        </apex:pageBlockTable>
+                                    </td>
+                                </tr>
+                            </table>
+                         </apex:outputPanel>
+                        </apex:pageblockSection>
+                    </apex:outputpanel>
+            </apex:pageblockSection>    
+            <apex:pageblockSection title="Contact Details" id="ContactSection" columns="1">  
+                <apex:pageblockSection >      
+                    <apex:inputField value="{!Payment_Plan__c.Preferred_Communication_Method__c}" required="true" /> 
+                    <apex:outputtext value=" "/>
+                    <apex:outputfield label="Primary Contact Number" value="{!billingAccount.Primary_Contact__r.Phone}"/>
+                    <apex:inputField value="{!Payment_Plan__c.Preferred_Contact_Number__c}"/>
+                    <apex:outputfield label="Primary Contact Email" value="{!billingAccount.Primary_Contact__r.Email}"/>
+                    <apex:inputField value="{!Payment_Plan__c.Preferred_Email__c}"/>                 
+                    
+                </apex:pageblockSection>
+				<apex:pageblockSection columns="1"> 
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel value="" />
+						<apex:outputPanel >
+							<apex:commandButton action="{!savePP}"  value="Save Payment Plan" onclick="if (!confirmation()) return false;" rendered="{!canSave}"/>
+	                        <apex:commandButton value="Cancel" action="{!cancel}" />
+
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+				
+				
+				     
+				</apex:pageblockSection>
+            </apex:pageblockSection>      
+      </apex:pageBlock>       
+
+       <apex:actionFunction name="removeChargeFromList" action="{!removeChargesFromList}" rerender="showstate, chargesDropdown, MRC_To_Update, totalOneOffAmount">
+            <apex:param name="firstParam" assignTo="{!chargeToRemove}" value="" />
+       </apex:actionFunction>    
+       
+       <apex:actionFunction name="addCharge" action="{!addChargesToList}" rerender="showstate, chargesDropdown, MRC_To_Update, totalOneOffAmount">
+            <apex:param name="firstParam" assignTo="{!chargeToAdd}" value="" />
+       </apex:actionFunction>    
+       
+       <apex:actionFunction name="updateMRC" action="{!updateMRCAndCharges}" rerender="showstate, chargesDropdown, MRC_To_Update, totalOneOffAmount"/>
+
+  
+  </apex:form>
+  <!--  
+  <apex:relatedList list="Payment_Plan_Lines__r" rendered="{!isReadOnlyMode}" />
+  -->
+</apex:page>

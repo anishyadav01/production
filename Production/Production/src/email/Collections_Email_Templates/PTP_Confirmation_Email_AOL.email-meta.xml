@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>PTP Confirmation Email AOL</name>
+    <style>none</style>
+    <subject>Your Arrangement Confirmation Email</subject>
+    <textOnly>Reference : PTP/{!Promise_to_Pay__c.Account_Key__c} 
+Service : AOL Broadband
+
+Dear {!Promise_to_Pay__c.Primary_Contact_Name__c} ,
+
+Thank you for contacting Customer Payment Support. Please see below details of your arrangement;
+
+Balance Due : {!Promise_to_Pay__c.Amount_Due__c}	New agreed payment date : {!Promise_to_Pay__c.Proposed_Payment_Date__c}
+
+This was agreed with you on {!Promise_to_Pay__c.CreatedDate}. If you fail to pay the agreed amount on or by this date, you may receive communications from our Customer Payment Support Team requesting payment and you may also have your services with us restricted. Please take note of the ways to make payment to us below;
+
+If you need to discuss any details relating to this agreement, then please contact us using the Customer Payment Support Number above.
+
+You can save £54 a year by setting up a Direct Debit, to find out how contact the Customer Payment Support Team or visit www.aolbroadband.co.uk
+
+Thank you
+
+The Customer Payment Support Team</textOnly>
+    <type>custom</type>
+</EmailTemplate>

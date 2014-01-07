@@ -1,0 +1,33 @@
+<p align="right"><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HJe&oid=00Dg0000000DIeW" alt="Talk Talk Telephone Number" /></p>
+
+<p> Reference : PTP/{!Promise_to_Pay__c.Account_Key__c}
+<br/>
+Service : AOL Broadband </p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g000000084hY&oid=00Dg0000000DIeW" alt="AOL Logo" /></p>
+
+<p>Dear {!Promise_to_Pay__c.Primary_Contact_Name__c} ,</p>
+
+<p>Thank you for contacting Customer Payment Support.  Please see below details of your arrangement; </p>
+
+<p>
+Balance Due : {!Promise_to_Pay__c.Amount_Due__c}	New agreed payment date : {!Promise_to_Pay__c.Proposed_Payment_Date__c}
+</p>
+
+<p> This was agreed with you on {!Promise_to_Pay__c.CreatedDate}. If you fail to pay the agreed amount on or by this date, you may receive communications from our Customer Payment Support Team requesting payment and you may also have your services with us restricted.  Please take note of the ways to make payment to us below;  </p>
+
+
+<p><a href="www.aolbroadband.co.uk/paynow"><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HOZ&oid=00Dg0000000DIeW" alt="Payment Methods" 
+/></a></p>
+
+<p> If you need to discuss any details relating to this agreement, then please contact us using the Customer Payment Support Number above.</p>
+
+<p> You can save £54 a year by setting up a Direct Debit, to find out how contact the Customer Payment Support Team or visit  <a href="www.aolbroadband.co.uk">www.aolbroadband.co.uk</a>
+</p>
+
+<p>Thank you </p>
+<p>The Customer Payment Support Team </p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HOy&oid=00Dg0000000DIeW" alt="AOL footer" /></p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g000000084hx&oid=00Dg0000000DIeW" alt="AOL footer" /></p>

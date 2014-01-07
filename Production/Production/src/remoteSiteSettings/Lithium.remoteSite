@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allow postback to Lithium community via outboud message</description>
+    <disableProtocolSecurity>true</disableProtocolSecurity>
+    <isActive>true</isActive>
+    <url>http://cloudsquadsdev.stage.lithium.com</url>
+</RemoteSiteSetting>

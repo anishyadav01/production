@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>TalkTalk</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TalkTalk</letterhead>
+    <name>Valli_Test</name>
+    <style>formalLetter</style>
+    <subject>Dear TalkTalk customer – Address Verification Required</subject>
+    <textOnly>Dear {!Contact.FirstName},
+Request you to verify your address details. This is extremely important !
+
+{!Contact.MailingAddress}
+
+Correct Address                                                                       Change Address
+
+
+Regards,
+TalkTalk.</textOnly>
+    <type>html</type>
+</EmailTemplate>

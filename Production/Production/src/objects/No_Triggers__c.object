@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Global flags for trigger exemptions</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Flag</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_P2P_Setup_Communication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, then no Communication will be sent to the client when a Promise to Pay is setup. To be used for data migration.</description>
+        <externalId>false</externalId>
+        <label>Skip P2P Setup Communication</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_PP_Setup_Communication__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, then no Communication will be sent to the client when a Payment Plan is setup. To be used for data migration.</description>
+        <externalId>false</externalId>
+        <label>Skip PP Setup Communication</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>No Triggers</label>
+</CustomObject>

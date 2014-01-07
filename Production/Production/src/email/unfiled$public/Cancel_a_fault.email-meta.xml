@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>TalkTalk</letterhead>
+    <name>Cancel a fault</name>
+    <style>formalLetter</style>
+    <subject>Cancel a Fault</subject>
+    <textOnly>Dear {!Contact.FirstName} 
+
+Thank you for your request to cancel your fault.
+
+I can confirm this will be complete within 24 hours.
+
+In the meantime if there is anything more we can help you with please do not hesitate to contact us.
+
+Remember we have the TalkTalk Community here to help you 24/7 with all your questions and technical support.</textOnly>
+    <type>html</type>
+</EmailTemplate>

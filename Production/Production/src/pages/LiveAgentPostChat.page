@@ -1,0 +1,299 @@
+<apex:page showHeader="false" controller="LiveAgentPostChatController">
+   <apex:pageMessages />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/js/jquery-1.9.0.js')}"  />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, '/js/jquery-ui-1.10.0.custom.js')}"  />
+    <apex:stylesheet value="{!URLFOR($Resource.jQuery, '/css/ui-lightness/jquery-ui-1.10.0.custom.min.css')}"  />
+    <!--[if gte IE 9]>
+  <style type="text/css">
+    .gradient {
+       filter: none;
+    }
+  </style>
+<![endif]-->
+    <style>
+    .ui-dialog .ui-dialog-buttonpane { 
+    text-align: center;
+    }
+    .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { 
+    float: none;
+    }
+    .ui-dialog-titlebar { display:none; }
+    </style>
+    <style type="text/css">
+label { width: 10em; float: left; }
+label.error { float: none; color: red; padding-left: .5em; vertical-align: top; }
+p { clear: both; }
+.submit { margin-left: 12em; }
+em { font-weight: bold; padding-right: 1em; vertical-align: top;color:red; }
+@font-face {
+    font-family: "OmnesRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("â˜º"), url("//m2.ttxm.co.uk/fonts/omnes-regular-webfont.ttf") format("truetype");
+}
+@font-face {
+    font-family: "OmnesMedium";
+    font-style: normal;
+    font-weight: normal;
+    src: local("â˜º"), url("//m2.ttxm.co.uk/fonts/omnes-medium-webfont.ttf") format("truetype");
+}
+body {
+    background-image: url("{!$Resource.chat_background}");
+    background-position: -9px 50%;
+    background-repeat: no-repeat;
+    font-family: OmnesMedium;
+    font-size: 14px;
+    background-size: 120% 120%;
+}
+.chat-icon {
+    width: 90px;
+    height: 78px;
+    float: right;
+    background-image: url("{!$Resource.chat_sprite}");
+    background-position: 143px -5px;
+}
+body, td {
+    color: #000;
+    font-family: OmnesRegular;
+        padding:5px;
+}
+
+.queue-message {
+font-size:16px;
+}
+
+.chat-welcome {
+    background-image: url("{!$Resource.chat_sprite}");
+    background-position: -289px -51px;
+    height: 33px;
+    width: 165px;
+    float: left;
+}
+#main {
+    height: 570px;
+    margin: 15px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid #5A5A5A;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.intro-text {
+    width: 260px;
+}
+.header {
+    clear: both;
+    display: inline-block;
+}
+.welcome-area {
+    float:left;
+    width:255px;
+}
+.intro-text p {
+    font-size: 13px;
+    padding-left: 4px;
+    padding-top: 10px;
+}
+.form td {
+    color: #000000;
+    font-family: OmnesMedium;
+    font-size: 13px;
+}
+.form {
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 10px 10px 10px 10px;
+    height: 348px;
+    overflow-x: hidden;
+    padding: 10px 5px;
+}
+.form td input[type=text] {
+    border: 1px solid grey;
+    padding: 3px;
+    border-radius: 5px;
+}
+input[type=button] {
+    background-image: url("{!$Resource.chat_sprite}");
+    background-color: transparent;
+    width: 165px;
+    height: 37px;
+    background-position: -199px -10px;
+    border: 0px;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+input[type=button] {
+background-image: url("{!$Resource.chat_sprite}");
+background-color: transparent;
+width: 76px;
+height: 31px;
+background-position: -371px -10px;
+text-indent: -9999px;
+cursor: pointer;
+float: right !important;
+margin-left: 1px;
+border: 0px;
+}
+input[type=button]:hover{
+    background-position:-371px -10px;
+    }
+.sorry {
+padding-left:10px;
+}
+
+tr:nth-child(odd) td{
+
+    font-family:OmnesMedium;
+ }
+
+table{
+    table-layout: fixed;
+    width: 100%;
+}
+
+
+select, option { 
+    width: 100px;
+    font-size: inherit;
+    overflow: auto;
+}
+
+</style>
+
+    <script>
+   jQuery.noConflict();
+   
+   jQuery(document).ready(function() {
+    
+ var size = [660,700];
+       window.resizeTo(size[0],size[1]);
+       jQuery(window).resize(function(){
+    window.resizeTo(size[0],size[1]);
+});
+    
+    jQuery(".class1").css('display','none');
+    if(!{!displayError})
+    {
+        jQuery('#dialog-consent').dialog({
+        resizable:false,
+        modal:true,
+        buttons: {
+            "Yes" : function(){
+                jQuery(this).dialog("close");
+            },
+            "No" : function(){
+                jQuery(this).dialog("close");
+                sayThankYou();
+            }
+        }
+        });
+    }
+
+   });
+
+   function sayThankYou(){
+    jQuery( "#dialog" ).dialog({
+      resizable: false,
+      height:200,
+      width:300,
+      modal: true,
+      buttons: {
+        "OK": function() {
+          jQuery( this ).dialog( "close" );
+          window.close();
+        }
+      }
+    });
+    }
+
+   function makeVisible(selectArg){
+    if(selectArg.selectedIndex >= 4){
+        jQuery(".class1").show();
+    }
+    else{
+        jQuery(".class1").css('display','none');
+    }
+    
+   }
+    
+</script>
+    
+    <div id="dialog" title="Thank You" style="display: none">
+     <p>Thank You for contacting TalkTalk today.</p>
+    </div>
+    
+    <div id="dialog-consent" title="Survey" style="display: none">
+     <p>{!$Label.Survey_Consent_Question}</p>
+    </div>
+    
+<div id="main" class="main">
+    
+    <apex:form id="theForm" >
+        <p class="queue-message"><apex:outputText value="{!$Label.Missed_Chat}" rendered="{!displayError}" /></p>
+        <p class="queue-message"><apex:outputText value="{!$Label.Missed_Chat_2}" rendered="{!displayError}" /></p>
+
+       <apex:outputPanel id="thePanel" rendered="{!displaySurvey}">
+        <p><apex:outputText value="{!$Label.Post_Chat_Survey_Scoring}" /> </p>
+        <hr/> 
+        <table>
+        
+        <tr><td width="70%"><apex:outputText value="1. {!$Label.Service_Satisfaction_Question}" /></td><td>
+        <apex:selectList size="1" required="true" value="{!postChatSurvey.Service_Satisfaction_Rating__c}" >
+                <apex:selectOptions value="{!ServiceSatisfactionOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        <tr><td width="70%"><apex:outputText value="2. {!$Label.Advisor_Knowledge_Question}" /></td><td>
+        <apex:selectList size="1" required="true" value="{!postChatSurvey.Advisor_Knowledge_Rating__c}">
+                <apex:selectOptions value="{!AdvisorKnowledgeOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        
+        <tr><td width="70%"><apex:outputText value="3. {!$Label.Advisor_Communication_Skills_Question}" /></td><td>
+        <apex:selectList size="1" required="true" value="{!postChatSurvey.Advisor_Communication_Skills_Rating__c}" onChange="makeVisible(this);">
+                <apex:selectOptions value="{!AdvisorCommunicationSkillsOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        <tr> <td class="class1 sorry"><apex:outputText value="{!$Label.Advisor_Communication_Skills_Sub_Question}" /></td><td class="class1">
+        <apex:selectList size="1" value="{!postChatSurvey.Advisor_Communication_Skills_SubResponse__c}" >
+                <apex:selectOptions value="{!AdvisorCommunicationSkillsSubResponseOptions}"/>
+        </apex:selectList> </td> </tr>
+        
+        <tr><td width="70%"><apex:outputText value="4. {!$Label.Issue_Resolution_Online_Question}" /></td><td>
+        <apex:selectList size="1" required="true" value="{!postChatSurvey.Issue_Resolution_Online__c}">
+                <apex:selectOptions value="{!IssueResolutionOnlineOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        <tr><td width="70%"><apex:outputText value="5. {!$Label.Proactive_Handling_Question}" /></td><td>
+        <apex:selectList size="1" required="true" value="{!postChatSurvey.Proactive_Handling_Rating__c}">
+                <apex:selectOptions value="{!ProactiveHandlingRatingOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        <tr><td width="70%"><apex:outputText value="6. {!$Label.Query_Resolved_Question}" /></td><td>
+        <apex:selectList size="1" required="true" value="{!postChatSurvey.Query_Resolved__c}">
+                <apex:selectOptions value="{!QueryResolvedOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        <tr><td width="70%"><apex:outputText value="7. {!$Label.Recommendation_Question}" /></td><td>
+        <apex:selectList size="1" required="true"  value="{!postChatSurvey.Recommendation_Rating__c}">
+                <apex:selectOptions value="{!RecommendatingRatingOptions}"/>
+        </apex:selectList> </td></tr>
+        
+        <tr><td width="70%"><apex:outputText value="8. {!$Label.Post_Chat_Comments}" /></td></tr>
+        <tr>
+            <td width="100%"> 
+                <apex:inputtextarea style="width: 360px; height: 40px" value="{!postChatSurvey.Comments__c}"/>
+            </td>
+        </tr>
+        
+        </table>
+        
+        <p align="center"><apex:commandButton value="Submit"  action="{!Submit}" onComplete="sayThankYou(this);" >
+            <apex:param name="startTime" value="{!$CurrentPage.parameters.startTime}" />
+            <apex:param name="requestTime" value="{!$CurrentPage.parameters.requestTime}" />
+            <apex:param name="chatKey" value="{!$CurrentPage.parameters.chatKey}" />
+        </apex:commandButton> </p>
+       </apex:outputPanel>
+    </apex:form>
+</div>
+</apex:page>

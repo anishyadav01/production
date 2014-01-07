@@ -1,0 +1,45 @@
+<apex:component >
+
+	<apex:attribute name="parentController" type="ContactSocialActivitiesController" required="true" description="Page controller" />
+	
+	<apex:pageblock id="CustomActivityList" title="{!IF(parentController.isFullPageMode, 'Social Activities for ' + parentController.cnt.Name, '')}" rendered="{!parentController.hasPosts}" >
+        
+        <apex:outputPanel layout="block" style="overflow:auto;height:100%" >
+           <apex:pageBlockTable value="{!parentController.allSocialActivities}" var="sa" rendered="{!NOT(ISNULL(parentController.allSocialActivities))}">
+                <apex:column headerValue="Post Date" >
+                    <apex:outputText value="{0,date, dd/MM/yyyy HH:MM a}">
+                          <apex:param value="{!sa.PostDate}"/>
+                    </apex:outputText>
+                </apex:column>
+                
+                <apex:column headerValue="Channel" value="{!sa.Channel}" />
+                <apex:column headerValue="Description" >
+                    <apex:outputText value="{!LEFT(sa.Description, 100) + IF(LEN(sa.Description) <= 100, '', '..')}" escape="false">
+                        <!-- <apex:param value="{!LEFT(sa.Description, 100)}" />
+                        <apex:param value="{!sa.Description.Length() ==100) ? '' : '..'}" />   -->
+                    </apex:outputText>  
+                </apex:column>
+               <apex:column headerValue="Posted By" value="{!sa.PostedBy}" />
+               <apex:column headerValue="Related Case" >
+                   <apex:outputLink value="/{!sa.RelatedCase.Id}" target="_blank">{!sa.RelatedCase.CaseNumber}</apex:outputLink>
+               </apex:column>
+               <apex:column headerValue="Post Url" >
+                   <apex:outputLink value="{!sa.PostId}" target="_blank">[See more]</apex:outputLink>
+               </apex:column>
+           </apex:pageBlockTable>
+           </apex:outputPanel>
+           <apex:outputLabel value="No records to display" rendered="{!(ISNULL(parentController.allSocialActivities))}" styleClass="noRowsHeader"></apex:outputLabel>
+           
+           <apex:panelGrid columns="1" rendered="true">    		        
+		        <apex:commandLink action="{!parentController.showAll}" rendered="{!NOT(parentController.isFullPageMode)}">Show all </apex:commandLink>
+		        <apex:commandLink action="{!parentController.back}" rendered="{!parentController.isFullPageMode}">Back </apex:commandLink>
+		    </apex:panelGrid>
+         </apex:pageblock>
+         
+         <apex:outputPanel rendered="{!NOT(parentController.hasPosts)}" styleClass="pbSubsection">
+            <div class="pbSubsection">
+                <center> <b> No social activity exists for the Contact</b> </center>
+            </div>
+         </apex:outputPanel>
+         
+</apex:component>

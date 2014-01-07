@@ -1,0 +1,4 @@
+<apex:page controller="ClosePaymentPlanController" action="{!closePaymentPlan}">
+
+  
+</apex:page>

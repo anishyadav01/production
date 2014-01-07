@@ -1,0 +1,92 @@
+<messaging:emailTemplate subject="New Payment Plan" recipientType="Contact" relatedToType="Payment_Plan__c">
+
+<messaging:htmlEmailBody >   
+
+<html>
+    <body>
+    <STYLE type="text/css">
+        TH {font-size: 11px; font-face: arial;background: #CCCCCC; border-width: 1;  text-align: center } 
+        TD  {font-size: 11px; font-face: verdana } 
+        TABLE {border: solid #CCCCCC; border-width: 1}
+        TR {border: solid #CCCCCC; border-width: 1}
+     </STYLE>
+     
+<p align="right"><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HJe&oid=00Dg0000000DIeW" alt="Talk Talk Telephone Number" /></p>
+
+<p> Reference : PA/{!relatedTo.Account_Key__c}</p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000007o0E&oid=00Dg0000000DIeW&lastMod=1379087288000" alt="Talk Talk Logo" /></p>
+
+ <font face="arial" size="2">
+       
+
+<p> Dear {!relatedTo.Billing_Account__r.Primary_Contact__r.Name}, </p>
+
+<c:PaymentPlanSummary ppId="{!relatedTo.Id}" />
+
+<p>This arrangement will remain valid until the final payment has been successfully received.</p>
+
+<p>If you default at any point within your payment arrangement as listed above, you will receive 
+communication from our Customer Payment Support Team requesting that the arrangement be brought up to date immediately. 
+Failure to do so may result in your services being restricted, and the full outstanding balance being requested in full.
+</p>
+
+<p><a href="www.talktalk.co.uk"><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g000000083Ax&oid=00Dg0000000DIeW&lastMod=1379087071000" alt="Payment Methods" 
+/></a>
+</p>
+
+<br/>
+
+<p> If you need to discuss any details relating to this agreement, then please contact us using the Customer Payment Support Number above.</p>
+
+<p> You can save £54 a year by setting up a Direct Debit, to find out how contact the Customer Payment Support Team or visit  <a href="www.talktalk.co.uk">www.talktalk.co.uk</a>
+</p>
+
+<p> Thank you <br/>
+The Customer Payment Support Team </p>
+
+
+<br/>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HKI&oid=00Dg0000000DIeW&lastMod=1379087144000" alt="Talk Talk brighter home"/></p>
+
+<p style="color:#C0C0C0; font-size:8px">This message is generated automatically. Please do not respond to this email. Emails are not monitored </p>
+
+<p><img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g00000008HKh&oid=00Dg0000000DIeW" alt="Talk Talk Company Info" /></p>
+
+ </font>
+        </body>
+    </html>
+</messaging:htmlEmailBody> 
+
+
+
+<messaging:plainTextEmailBody >
+
+<apex:image alt="Company Logo" url="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g0000000839p&oid=00Dg0000000DIeW"/>
+
+Dear {!relatedTo.Billing_Account__r.Primary_Contact__r.Name},
+ 
+Thank you for contacting Customer Payment Support.  Please see below details of your arrangement;
+            
+Balance Due  : {!relatedTo.Account_Balance__c }
+
+<c:PaymentPlanLineItemsOrdered ppId="{!relatedTo.Id}" />
+
+This arrangement was agreed with you on <apex:outputText value="{0,date, dd/MM/yyyy}">
+                    <apex:param value="{!relatedTo.CreatedDate }" />
+                </apex:outputText>  and will remain valid until the final payment 
+has been successfully received.
+
+If you default during this agreement, you may receive communications from our Customer Payment Support Team requesting 
+payment and you may also have your services with us restricted.  Please take note of the ways to make payment to us below;
+
+<img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g000000084U6&oid=00Dg0000000DIeW&lastMod=1378297273000" alt="Payment Methods" />
+  
+If you need to discuss any details relating to this agreement, then please contact us using the Customer Payment Support Number above.
+
+<img src="https://c.cs17.content.force.com/servlet/servlet.ImageServer?id=015g000000083B3&oid=00Dg0000000DIeW&lastMod=1378216404000" alt="Direct Debit" />
+
+        
+</messaging:plainTextEmailBody>
+</messaging:emailTemplate>

@@ -1,0 +1,18 @@
+<apex:page standardController="Case" extensions="CaseGetNextController" action="{!onLoad}">
+
+<script>
+var resultPR = '{!result}';
+
+if(resultPR == null || resultPR == ''){
+
+if(!{!authorisedProfile})
+alert('{!$Setup.Radian6_Case_Config__c.Get_Next_Unauthorised__c}');
+
+else
+alert('{!$Setup.Radian6_Case_Config__c.No_Cases_Available__c}');
+
+window.location = '/500/o';
+}
+</script>
+
+</apex:page>

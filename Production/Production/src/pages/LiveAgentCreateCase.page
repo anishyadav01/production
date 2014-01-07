@@ -1,0 +1,57 @@
+<apex:page title="{!caseId}" standardController="Case" extensions="LiveAgentCreateCase" sidebar="false" tabStyle="Case" showHeader="true" >
+<apex:form >
+  <apex:includeScript value="/support/console/29.0/integration.js"/>
+<script type="text/javascript">
+var CLI;
+var chatKey;
+var previousOnload = window.onload;
+         var myVar;
+
+        window.onload = function() {
+            if (previousOnload) {
+                previousOnload();
+            }
+
+           testGetFocusedPrimaryTabId();
+        }
+
+    function testGetFocusedPrimaryTabId() {
+            sforce.console.getFocusedPrimaryTabId(testGetDetailsByPrimaryTabId);
+        }
+
+    function testGetDetailsByPrimaryTabId(result) {
+        sforce.console.chat.getDetailsByPrimaryTabId(result.id, getDetailsSuccess);
+    };
+
+    function getDetailsSuccess(result) {
+        //Report whether accepting the chat was succesful
+        if (result.success == true) {
+            for(v in result.details.customDetails) {
+                if(result.details.customDetails[v].label == 'CLI') {
+                    CLI = result.details.customDetails[v].value;
+                }
+            }
+            console.log('DEBUG The custom details ' + JSON.stringify(result.details.breadcrumbs[0].location));
+	        currentURL = result.details.breadcrumbs[0].location;
+            chatKey = result.details.chatKey;
+            sendPageInfo(CLI, chatKey, currentURL);
+        } else {
+            console.log('Error occured, getting results was not successful');
+        }
+    };
+
+</script>
+
+<apex:outputPanel id="pageInfoPanel">
+    <apex:actionFunction action="{!createCase}" name="sendPageInfo" rerender="pageInfoPanel" >
+        <apex:param name="firstParam" assignTo="{!CLI}" value="{!CLI}" />
+        <apex:param name="secondParam" assignTo="{!chatKey}" value="{!chatKey}" />
+        <apex:param name="thirdParam" assignTo="{!currentURL}" value="{!currentURL}" />
+    </apex:actionFunction>
+</apex:outputPanel>
+
+</apex:form>
+
+
+
+</apex:page>

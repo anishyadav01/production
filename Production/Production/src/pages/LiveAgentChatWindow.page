@@ -1,0 +1,255 @@
+<apex:page showHeader="false">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, '/js/jquery-1.9.0.js')}"  />
+<script language="javascript">
+window.resizeTo(500,625);
+</script>
+<site:googleAnalyticsTracking />
+<style type="text/css">
+@font-face {
+    font-family: "OmnesRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("â˜º"), url("//m2.ttxm.co.uk/fonts/omnes-regular-webfont.ttf") format("truetype");
+}
+@font-face {
+    font-family: "OmnesMedium";
+    font-style: normal;
+    font-weight: normal;
+    src: local("â˜º"), url("//m2.ttxm.co.uk/fonts/omnes-medium-webfont.ttf") format("truetype");
+}
+.liveAgentStateWaiting #waitingMessage {
+    display:block;
+}
+.liveAgentState #waitingMessage {
+    display:none;
+}
+.liveAgentStateWaiting .header {
+display:none;
+}
+body {
+    background-image: url("{!$Resource.chat_background}");
+    background-position: -7px -14px;
+    background-repeat: no-repeat;
+    font-family: OmnesMedium;
+    width: 100%;
+    height: 100%;
+    color:#fff;
+}
+.chat-icon {
+    width: 90px;
+    height: 78px;
+    float: right;
+    background-image: url("{!$Resource.chat_sprite}");
+    background-position: 143px -5px;
+}
+.chat-welcome {
+    background-image: url("{!$Resource.chat_sprite}");
+    background-position: -289px -51px;
+    height: 33px;
+    width: 165px;
+    float: left;
+    position: relative;
+    top:16px;
+}
+.main {
+    margin: 10px;
+    width:90%;
+}
+h2 {
+    font-size:19px !important;
+    font-family:OmnesRegular, Arial !important;
+    }
+.portrait{
+        width:80px;
+        height:80px;
+        background-image: url("{!$Resource.chat_sprite}");
+        background-position: -5px -85px;
+        background-repeat: no-repeat;
+        float:left;
+    }
+
+.header {
+height: 80px;
+overflow: hidden;
+margin-bottom: 10px;
+width: 395px;
+}
+
+.agent-details {
+float: left;
+margin-left: 10px;
+margin-top: 2px;
+}
+#liveAgentChatLog {
+border: 2px solid grey !important;
+background-color: white;
+border-radius: 5px;
+color: black;
+padding: 10px;
+overflow-y:scroll;
+overflow-x:hidden;
+width: 367px !important;
+line-height: 18px;
+font-size:14px;
+}
+#liveAgentChatLog .operator {
+color:5a5a5a;
+margin-top:2px;
+margin-bottom:5px;
+}
+#liveAgentChatLog .client {
+color:grey;
+margin-top:2px;
+margin-bottom:5px;
+}
+.liveAgentChatInput{
+    width:295px;
+    border:2px solid grey;
+    border-radius:5px;
+    padding:5px;
+    float:left;
+}
+.liveAgentSendButton {
+background-image: url("{!$Resource.chat_sprite}");
+background-color: transparent;
+width: 76px;
+height: 31px;
+background-position: -371px -10px;
+text-indent: -9999px;
+cursor: pointer;
+float: right !important;
+margin-left: 1px;
+border: 0px;
+}
+.liveAgentEndButton {
+cursor: pointer;
+float: left !important;
+}
+
+.liveAgentSendButton:hover{
+    background-position:-371px -10px;
+}
+#chatInput{
+width: 393px;
+margin-top: 10px;
+}
+/*Styling for chat boxes temp */
+#liveAgentChatLog .operator {
+color: white;
+margin-top: 5px;
+margin-bottom: 5px;
+padding: 10px;
+border-radius: 10px;
+background: grey;
+}
+#liveAgentChatLog .client {
+color: black;
+margin-top: 2px;
+margin-bottom: 5px;
+padding: 10px;
+border-radius: 10px;
+background: #D3D3D3; 
+}
+.header-waiting {
+width:400px;
+height:70px;
+}
+.center-message {
+position:relative;
+top: 45px;
+left: 31px;
+}
+.loading-gif {
+margin-left:75px;
+}
+.queue-message {
+font-size:16px;
+}
+.position {
+display:none;
+}
+. talktalk-title {
+position: relative;
+top: 25px;
+left: 28px;
+}
+.liveAgentStateWaiting .chat-policy {
+display:none;
+}
+.chat-policy a {
+color: white;
+text-decoration: none;
+font-size: 14px;
+}
+.liveAgentStateWaiting .chat-recording {
+display:none;
+}
+.chat-recording a {
+color: white;
+text-decoration: none;
+font-size: 10px;
+}
+</style>
+<!-- Add custom CSS here -->
+<!-- The root element for the chat window. This element gets a CSS class dynamically applied
+to indicate the state of the chat window. Available states are:
+"liveAgentStateWaiting" - indicates that the chat has not yet been answered.
+"liveAgentState" - indicates that the chat is engaged
+"liveAgentStateStatusMessage" - indicates that a status message is being displayed to the
+user.
+"liveAgentStateEnded" - indicates that the chat has ended. -->
+
+<div class="main">
+    <liveAgent:clientchat >
+    <liveAgent:clientChatMessages />
+    <div id="waitingMessage" class="modal">
+        <div class="header-waiting">
+            <div class="chat-welcome"></div>
+            <div class="chat-icon"></div>
+        </div>
+        <div class="center-message">
+            <!-- You can customize this waiting message HTML -->
+            <p class="queue-message">Please wait, you are now being connected to an agent...</p>
+            <p class="queue-message">(On average it takes less than 2 minutes to connect.) </p>
+            <!--<img class="loading-gif" src="{!$Resource.chat_animated_icon}" alt="loading" />
+            <p class="queue-message position">You are in position <liveAgent:clientChatQueuePosition /> in the queue.</p>-->
+        </div>
+    </div>
+    <div id="chatControls" class="pod">
+    </div>
+    <div class="header">
+        <div class="portrait"></div>
+        <div class="agent-details">
+        <h2 class="talktalk-title">TalkTalk Live Chat</h2>
+        </div>
+        <div class="chat-icon"></div>
+    </div>
+
+    <liveAgent:clientChatLog />
+    <div id="chatInput" class="pod">
+        <liveagent:clientChatInput />
+        <liveAgent:clientChatSendButton label="Send"/>
+        
+    </div>
+   <p> 
+        <liveAgent:clientChatSaveButton label="Save Chat" />
+        <liveAgent:clientChatEndButton label="End Chat" />
+   </p>
+   <br/>
+   <p class="chat-policy"> <a target="_blank" href="https://help2.talktalk.co.uk/live-chat-privacy-policy">Live Chat Privacy Policy</a></p>
+    </liveAgent:clientchat>
+
+</div>
+
+<!-- You can customize the window title with the js below -->
+<script type="text/javascript">
+document.title = "TalkTalk Chat";
+</script>
+<script type="text/javascript">
+jQuery('#liveAgentChatLogText .operator > strong').load(function() {
+  alert('name should be loaded');
+  var name =jQuery('#liveAgentChatLogText .operator > strong').html();
+ jQuery('.agent-details >h2').html(name);
+});
+</script>
+</apex:page>

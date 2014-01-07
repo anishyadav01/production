@@ -1,0 +1,60 @@
+<apex:page sidebar="false" standardController="Account" extensions="ContactSocialActivitiesController">
+
+<!-- This script removed the inline=1 param from the url when clicking on the Back button -->
+<script>
+     var url = location.href;
+     var match = url.match(/inline=1/);
+    if (match != null) { 
+        var newUrl = url.replace(/inline=1/, '');
+        window.top.location=newUrl;
+    }
+</script>
+
+    <apex:form >
+        <apex:pageMessages />
+        
+        <c:ContactSocialActivities parentController="{!controller}" />
+        
+        
+       <!-- <apex:pageblock id="CustomActivityList" title="{!IF(isFullPageMode, 'Social Activities for ' + cnt.Name, '')}" rendered="{!hasPosts}" >
+        
+        <apex:outputPanel layout="block" style="overflow:auto;height:100%" >
+           <apex:pageBlockTable value="{!allSocialActivities}" var="sa" rendered="{!NOT(ISNULL(allSocialActivities))}">
+                <apex:column headerValue="Post Date" >
+                    <apex:outputText value="{0,date, dd/MM/yyyy HH:MM a}">
+                          <apex:param value="{!sa.PostDate}"/>
+                    </apex:outputText>
+                </apex:column>
+                
+                <apex:column headerValue="Channel" value="{!sa.Channel}" />
+                <apex:column headerValue="Description" >
+                    <apex:outputText value="{!LEFT(sa.Description, 100) + IF(LEN(sa.Description) <= 100, '', '..')}" escape="false">
+                    </apex:outputText>  
+                </apex:column>
+               <apex:column headerValue="Posted By" value="{!sa.PostedBy}" />
+               <apex:column headerValue="Related Case" >
+                   <apex:outputLink value="/{!sa.RelatedCase.Id}" target="_blank">{!sa.RelatedCase.CaseNumber}</apex:outputLink>
+               </apex:column>
+               <apex:column headerValue="Post Url" >
+                   <apex:outputLink value="{!sa.PostId}" target="_blank">[See more]</apex:outputLink>
+               </apex:column>
+           </apex:pageBlockTable>
+           </apex:outputPanel>
+           <apex:outputLabel value="No records to display" rendered="{!(ISNULL(allSocialActivities))}" styleClass="noRowsHeader"></apex:outputLabel>
+           
+           <apex:panelGrid columns="1" rendered="true">    		        
+		        <apex:commandLink action="{!showAll}" rendered="{!NOT(isFullPageMode)}">Show all </apex:commandLink>
+		        <apex:commandLink action="{!back}" rendered="{!isFullPageMode}">Back </apex:commandLink>
+		    </apex:panelGrid>
+         </apex:pageblock>
+         
+         <apex:outputPanel rendered="{!NOT(hasPosts)}" styleClass="pbSubsection">
+            <div class="pbSubsection">
+                <center> <b> No social activity exists for the Contact</b> </center>
+            </div>
+         </apex:outputPanel>
+          --> 
+        
+         
+    </apex:form>
+</apex:page>

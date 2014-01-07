@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>Classification</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Product Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Outreach</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Customer Case</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>EngagementLevel</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commented</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>OutboundSocialAccountId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ParentId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>PersonaId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__AnalyzerScore__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Analyzer Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__AuthorExternalId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Author External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__AuthorExternalPictureURL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Author External Picture URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__AuthorRealName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Author Real Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__AuthorSocialHandle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Author Social Handle</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__AuthorType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Author Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__HarvestDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Harvest Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__IsOutbound__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Was this post made from Radian6 for the Service Cloud?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Checked if this post was sent from Salesforce.</inlineHelpText>
+        <label>Is Outbound</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__Language__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Language</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__MediaIconResource__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A formula used by the media icon. Should not be made visible.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(UPPER(MediaProvider),&quot;TWITTER&quot;), &quot;/resource/R6Service__Twitter_Logo&quot;,
+IF(CONTAINS(UPPER(MediaProvider), &quot;FACEBOOK&quot;), &quot;/resource/R6Service__Facebook_Logo&quot;,
+IF(CONTAINS(UPPER(MediaProvider), &quot;YOUTUBE&quot;), &quot;/resource/R6Service__MediaTypeYouTubeIcon&quot;,
+CASE(UPPER(MediaType),
+&quot;BLOGS&quot;, &quot;/resource/R6Service__MediaTypeBlogIcon&quot;,
+&quot;VIDEOS&quot;, &quot;/resource/R6Service__MediaTypeVideoIcon&quot;,
+&quot;IMAGES&quot;, &quot;/resource/R6Service__MediaTypeImageIcon&quot;,
+&quot;MAINSTREAM NEWS&quot;, &quot;/resource/R6Service__MediaTypeNewsIcon&quot;,
+&quot;MICROMEDIA&quot;, &quot;/resource/R6Service__MediaTypeMicromediaIcon&quot;,
+&quot;FORUM&quot;, &quot;/resource/R6Service__MediaTypeForumIcon&quot;,
+&quot;COMMENTS&quot;, &quot;/resource/R6Service__MediaTypeCommentIcon&quot;,
+&quot;/resource/R6Service__DefaultChannelLogo&quot;
+))))</formula>
+        <label>Media Icon Resource</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__MediaIcon__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The icon that represents the post&apos;s medium. This will be the provider&apos;s logo for common providers, or generic media type logos for less popular providers.</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(R6Service__MediaIconResource__c, MediaType + &quot;/&quot; + MediaProvider, 48, 48)</formula>
+        <inlineHelpText>The media provider or media type.</inlineHelpText>
+        <label>Media Icon</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__Notes__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>R6Service__OriginalAuthorExternalPictureURL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Avatar URL of the post&apos;s original author. This data is available on Retweets.</description>
+        <externalId>false</externalId>
+        <label>Original Author External Picture URL</label>
+        <required>false</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__OriginalAuthorRealName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Real name of the post&apos;s original author. This data is available on Retweets.</description>
+        <externalId>false</externalId>
+        <label>Original Author Real Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__OriginalAuthorSocialHandle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Social handle of the post&apos;s original author. This data is available on Retweets.</description>
+        <externalId>false</externalId>
+        <label>Original Author Social Handle</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__Origins__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Origins</label>
+        <length>32000</length>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>R6Service__PostLink__c</fullName>
+        <deprecated>false</deprecated>
+        <description>A link to the post.  This displays as the media type icon and when clicked will take you to the external media type site.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK( PostUrl), &quot;&quot;,  HYPERLINK(PostUrl,  IMAGE(R6Service__MediaIconResource__c, PostUrl, 16, 16)))</formula>
+        <inlineHelpText>Click here to visit the post.</inlineHelpText>
+        <label>Post Link</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__PostTags__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Post Tags</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__RecipientExternalId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recipient External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__RecipientSocialHandle__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recipient Social Handle</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__ReplyToExternalId__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Reply To External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__SourceTags__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Source Tags</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__SpamRating__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Is this spam or not?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this spam or not?</inlineHelpText>
+        <label>Spam Rating</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Spam</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spam</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>R6Service__StatusMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Friendly post status. This will contain an easy-to-read description of the status of the post.</description>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(R6Service__Status__c),
+NULL,
+CASE(UPPER(TRIM(R6Service__Status__c)),
+&apos;R6_AUTHENTICATION&apos;, $Label.R6Service__AuthorizationError,
+&apos;R6_APP&apos;, $Label.R6Service__SendMessageError,
+&apos;SOCIAL_ACCOUNT_AUTHENTICATION&apos;, $Label.R6Service__OauthError,
+&apos;INVALID_USER_ACCOUNT&apos;, $Label.R6Service__InvalidUserAccountError,
+&apos;USER_NOT_VISIBLE&apos;, $Label.R6Service__UserNotVisibleStatus,
+&apos;DUPLICATE_MESSAGE_POSTED&apos;, $Label.R6Service__DuplicateMessageError,
+&apos;TWITTER_USER_NOT_FOLLOWING_YOU&apos;, $Label.R6Service__TwitterUserNotFollowing,
+&apos;USERNAME_HAS_CHANGED&apos;, $Label.R6Service__UsernameHasChangedError,
+&apos;SEND_MESSAGE_FAILED&apos;, $Label.R6Service__SendMessageError,
+&apos;SENT&apos;, $Label.R6Service__SentStatus,
+&apos;PENDING&apos;, $Label.R6Service__PendingStatus,
+&apos;REPLIED&apos;, $Label.R6Service__RepliedStatus,
+&apos;DELETED&apos;, $Label.R6Service__DeletedStatus,
+$Label.R6Service__UnknownStatus)
+)</formula>
+        <inlineHelpText>The post status. For example, posts may be sent, pending, deleted, replied, have an error message or be blank (for incoming posts that have not been addressed).</inlineHelpText>
+        <label>Status Message</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>R6Service__Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The status code of the post. This is the status code sent by Radian6 and is not meant to be human readable. See the StatusMessage field for the friendly status message.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Status Code for the post, used to determine the friendly error message in StatusMessage.</inlineHelpText>
+        <label>Status Code</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>WhoId</fullName>
+        <type>Lookup</type>
+    </fields>
+    <recordTypes>
+        <fullName>R6Service__FacebookPost</fullName>
+        <active>true</active>
+        <label>Facebook</label>
+        <picklistValues>
+            <picklist>Classification</picklist>
+            <values>
+                <fullName>Customer Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EngagementLevel</picklist>
+            <values>
+                <fullName>Commented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>R6Service__SpamRating__c</picklist>
+            <values>
+                <fullName>Not Spam</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Spam</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>R6Service__OtherPost</fullName>
+        <active>true</active>
+        <label>Other</label>
+        <picklistValues>
+            <picklist>Classification</picklist>
+            <values>
+                <fullName>Customer Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EngagementLevel</picklist>
+            <values>
+                <fullName>Commented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>R6Service__SpamRating__c</picklist>
+            <values>
+                <fullName>Not Spam</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Spam</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>R6Service__TwitterPost</fullName>
+        <active>true</active>
+        <label>Twitter</label>
+        <picklistValues>
+            <picklist>Classification</picklist>
+            <values>
+                <fullName>Customer Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Inquiry</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Outreach</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Product Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>EngagementLevel</picklist>
+            <values>
+                <fullName>Commented</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resolved</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reviewed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>R6Service__SpamRating__c</picklist>
+            <values>
+                <fullName>Not Spam</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Spam</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>Name</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Persona</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Headline</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Posted</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Name</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Persona</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Headline</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Posted</searchResultsAdditionalFields>
+    </searchLayouts>
+    <webLinks>
+        <fullName>R6Service__DeletePostfromSocialMediaProvider</fullName>
+        <availability>online</availability>
+        <description>Delete the post from the social media provider, but leave the post in Salesforce</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Delete from Source</masterLabel>
+        <openType>sidebar</openType>
+        <page>R6Service__PostDelete</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

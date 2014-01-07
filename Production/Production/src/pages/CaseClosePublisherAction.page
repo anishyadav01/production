@@ -1,0 +1,60 @@
+<apex:page standardcontroller="Case" extensions="CaseFeedCloseController" showHeader="false">
+
+<apex:includeScript value="/support/api/26.0/interaction.js"/>
+
+  <script type='text/javascript' src='/canvas/sdk/js/28.0/publisher.js'/>
+  <style>
+      .requiredInput .requiredBlock, .requiredBlock {
+          background-color: white;
+      }
+      .custompubblock div {
+          display: inline-block;
+      }
+      .custompublabel {
+          width:100px;
+      }
+  </style>
+
+  <!-- Not used! -->
+  <script> function refreshFeed() {
+    <!-- Sfdc.canvas.publisher.publish({name : 'publisher.refresh', payload : {feed: true}}); } -->
+    sforce.interaction.entityFeed.refreshObject('{!caseRec.Id}', false, true, true);
+  </script>
+
+  <apex:form >
+    <apex:actionFunction action="{!closeCase}"
+      name="closeCase"
+      rerender="out"
+      oncomplete="refreshFeed();"/>
+
+    <apex:outputPanel id="out" >
+      <div class="custompubblock">
+
+        <div class="custompublabel">Subject:</div>
+        <apex:inputField value="{!caseRec.Subject}" /><br />
+
+        <div class="custompublabel">Reason:</div>
+        <apex:inputField value="{!caseRec.Reason}" style="margin-top:4px;" /><br />
+
+        <div class="custompublabel">Outcome:</div>
+        <apex:inputField value="{!caseRec.Case_Outcome__c}" style="margin-top:4px;" /><br />
+
+        <div class="custompublabel">Close Reason:</div>
+        <apex:inputField value="{!caseRec.Close_Reason__c}" style="margin-top:4px;" /><br />
+      </div>
+
+      <div class="custompublabel">Description:</div>
+      <apex:inputField value="{!caseRec.description}"
+        style="width:500px; right:0px;
+        height:92px;
+        margin-top:4px;" /><br />
+
+    </apex:outputPanel>
+
+      <apex:commandButton value="Close Case" action="{!closeCase}"
+          oncomplete="sforce.interaction.entityFeed.refreshObject('{!caseRec.id}', true, true, true);"/>
+
+  </apex:form>
+  <br/>
+
+</apex:page>

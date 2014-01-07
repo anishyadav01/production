@@ -1,0 +1,29 @@
+<apex:component controller="PaymentPlanLineItemsOrderedController"  access="global">
+
+	<apex:attribute name="ppId" type="String" assignTo="{!ppId}" description="Payment Plan Id" /> 
+
+<!--
+<apex:outputText value="Id passed to Controller is {!ppId} - {!Test} - {!numberLI} - {!numberPPI}" />
+-->
+
+   	   <apex:dataTable value="{!lineItems}" var="ppli" style="border: solid #CCCCCC; border-width: 1">
+   	   		<apex:column headerValue="" width="100px" >
+	            <apex:outputText value="{!ppli.sequence}" />
+	        </apex:column>
+	        
+	        <apex:column headerValue="Due Date" width="100px" style="padding-left:3.5cm">
+	            <apex:outputText value="{0,date, dd/MM/yyyy}" >
+                    <apex:param value="{!ppli.dueDate}" />
+                </apex:outputText> 
+	        </apex:column>
+	        
+	        
+	        <apex:column headerValue="Amount" width="100px" style="padding-left:3.5cm">
+	        	<apex:outputText value="{0,number, #,##0.00}" >
+                    <apex:param value="{!ppli.amount}" />
+                </apex:outputText>
+            </apex:column>
+	       
+	   </apex:dataTable>
+           
+</apex:component>

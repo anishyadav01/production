@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Various settings for Collections</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Approval_Term_Threshold__c</fullName>
+        <description>The number of periods above which a PP will require approval before it is Active/Open.</description>
+        <externalId>false</externalId>
+        <label>Approval Term Threshold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Email_Address_for_Extracted_Data__c</fullName>
+        <externalId>false</externalId>
+        <label>Email Address for Extracted Data</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extra_Month__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Determines whether the Payment Plan installments calculation will take into account the MRC for the last month.</description>
+        <externalId>false</externalId>
+        <label>Extra Month in PP Calculation</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>P2P_Path_for_30_60d_Debt__c</fullName>
+        <externalId>false</externalId>
+        <label>P2P Path for 30 60d Debt</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>P2P_Path_for_Less_than_30d_Debt__c</fullName>
+        <externalId>false</externalId>
+        <label>P2P Path for Less than 30d Debt</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>P2P_Payment_Days_from_Now_Tolerance__c</fullName>
+        <description>This setting holds tolerance for maximum number of days from the setup date to accept payment for P2P</description>
+        <externalId>false</externalId>
+        <label>P2P Payment Days from Now Tolerance</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PA_Confirmation_Email_Template_AOL__c</fullName>
+        <description>The id of the PP Confirmation Template that is sent as an email to the AOL customer once a PP has been activated and a case created.</description>
+        <externalId>false</externalId>
+        <label>PA Confirmation Email Template AOL</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PA_Confirmation_Email_Template_TT__c</fullName>
+        <description>The id of the PP Confirmation Template that is sent as an email to the Talk Talk customer once a PP has been activated and a case created.</description>
+        <externalId>false</externalId>
+        <label>PA Confirmation Email Template TT</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PP_Call_Limit__c</fullName>
+        <externalId>false</externalId>
+        <label>PP Call Limit</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PTP_Confirmation_Email_Template_AOL__c</fullName>
+        <description>The id of the P2P Confirmation Template that is sent as an email to the AOL customer once a P2P has been activated and a case created.</description>
+        <externalId>false</externalId>
+        <label>PTP Confirmation Email Template AOL</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PTP_Confirmation_Email_Template_TT__c</fullName>
+        <description>The id of the P2P Confirmation Template that is sent as an email to the TT customer once a P2P has been activated and a case created.</description>
+        <externalId>false</externalId>
+        <label>PTP Confirmation Email Template TT</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Acceptable_Tolerance__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Acceptable Tolerance</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Days_from_Now_Tolerance_Oneoff__c</fullName>
+        <description>This setting holds Tolerance value for maximum number of days from now when the one off payment is made</description>
+        <externalId>false</externalId>
+        <label>Payment Days from Now Tolerance Oneoff</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Days_from_Now_Tolerance__c</fullName>
+        <description>Up to how many days the P2P Proposed Payment Date and the PP First Installment Date can be from today.</description>
+        <externalId>false</externalId>
+        <label>Payment Days from Now Tolerance</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Payment_Plan_Path__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Plan Path</label>
+        <length>80</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Skip_P2P_Setup_Communication_del__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, then no Communication will be sent to the client when a Promise to Pay is setup. To be used for data migration.</description>
+        <externalId>false</externalId>
+        <label>Skip P2P Setup Communication</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Skip_PP_Setup_Communication_del__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If checked, then no Communication will be sent to the client when a Payment Plan is setup. To be used for data migration.</description>
+        <externalId>false</externalId>
+        <label>Skip PP Setup Communication</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Collections Settings</label>
+</CustomObject>

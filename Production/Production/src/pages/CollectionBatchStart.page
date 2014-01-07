@@ -1,0 +1,8 @@
+<apex:page controller="CollectionBatchStartContoller">
+  <apex:form >
+    
+    <apex:outputText style="font-size:12pt;font-weight:bold!important;" value="Make sure that the payments have been uploaded before starting the job."/> 
+	<br></br><br></br>
+	<apex:commandButton value="Start Job" action="{!startJob}"/>
+  </apex:form>	
+</apex:page>

@@ -1,0 +1,11 @@
+<apex:component controller="PaymentPlanSummaryController" access="global">
+
+	             <apex:pageMessages rendered="true" id="errorBlock" />
+	
+	<apex:attribute name="ppId" type="String" assignTo="{!paymentPlanId}" description="Payment Plan Id" />
+	
+	<apex:outputText value="Thank you for setting up your payment arrangement of {!monthlyInstallmentAmount} on a {!pp.Proposed_Frequency__c} basis in 
+	{!noOfInstallments} instalments, with your final payment of {!finalInstallment} on the {!pp.Last_Due_Date__c}." />
+	
+
+</apex:component>

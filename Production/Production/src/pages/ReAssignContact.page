@@ -1,0 +1,36 @@
+<apex:page StandardController="Case" Extensions="ReAssignContact">
+	<apex:sectionHeader title="Re-Assign Contact" subtitle="Contact Search"/><apex:messages />
+	<apex:outputlink value="/{!case.id}">Back to Case</apex:outputlink>
+	<apex:form >
+		<apex:pageblock > 
+				Enter Search Criteria:&nbsp;<apex:inputText value="{!searchTerm}"/>&nbsp;<apex:commandbutton action="{!doSearch}" value="Search.." />
+				<BR/><BR/>
+ 				<H3>Contact Results</H3>
+ 				<apex:pageBlockTable value="{!searchResultsContact}" var="item">
+            		<apex:column ><apex:commandlink action="{!ReAssign}" value="Select" ><apex:param name="selectId" value="{!item.id}" assignTo="{!selectId}"/></apex:commandlink></apex:column>
+		            <apex:column value="{!item.name}"/> 
+            		<apex:column value="{!item.Account.Name}"/>
+            		<apex:column value="{!item.Phone}"/>
+            		<apex:column value="{!item.MobilePhone}"/>
+            		<apex:column value="{!item.Email}"/>
+            		<apex:column value="{!item.ISVIP__c}"/>
+            		<apex:column headerValue="Record Type" value="{!item.recordType.Name}"/>
+        		</apex:pageBlockTable> 
+
+				<BR/><BR/>
+ 				<H3>Asset Results</H3>
+				<apex:pageBlockTable value="{!searchResultsAsset}" var="item">
+					<apex:column ><apex:commandlink action="{!ReAssign}" value="Select" ><apex:param name="selectId" value="{!item.contact.Id}" assignTo="{!selectId}"/></apex:commandlink></apex:column>
+		            <apex:column value="{!item.CLI__c}"/> 
+		            <apex:column value="{!item.contact.Name}"/> 
+            		<apex:column value="{!item.contact.Account.Name}"/>
+            		<apex:column value="{!item.contact.Phone}"/>
+            		<apex:column value="{!item.contact.MobilePhone}"/>
+            		<apex:column value="{!item.contact.Email}"/>
+            		<apex:column value="{!item.contact.ISVIP__c}"/>
+            		<apex:column headerValue="Record Type" value="{!item.contact.recordType.Name}"/>
+        		</apex:pageBlockTable> 
+				
+		</apex:pageblock>
+	</apex:form>
+</apex:page>
