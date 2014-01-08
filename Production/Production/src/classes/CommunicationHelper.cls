@@ -1,5 +1,5 @@
 public with sharing class CommunicationHelper {
-	
+	//Test Comment
 	public static map<string, Id> orgWideEmailAddressMap = new map<string, Id>();
 	
 	public static id getOrgWideEmailId ( string emailAddress ){
